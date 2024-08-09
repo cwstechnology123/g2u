@@ -1,0 +1,47 @@
+.react-responsive-modal-modal {
+    padding: 0 !important;
+}
+
+.react-responsive-modal-closeButton {
+    display: none !important;
+}
+
+.is-invalid {
+    border-color: red !important;
+}
+
+.modal {
+    background-color: transparent !important;
+    bottom: unset;
+    right: unset;
+    height: auto;
+    width: auto;
+    top: 30vh;
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .react-responsive-modal-modal {
+        width: 25%;
+    }
+
+    
+}
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .react-responsive-modal-modal {
+        width: 25%;
+    }
+
+    
+}
+
+/* Media Query for Large screens */
+@media (min-width: 1281px) {
+    .react-responsive-modal-modal {
+        width: 25%;
+    }
+
+    
+}

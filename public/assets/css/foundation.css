@@ -1,0 +1,6655 @@
+/* //////////////////// */
+/* WINDOW WIDTH CHECKER */
+/* //////////////////// */
+body:after {
+    content: 'desktop';
+    display: none;
+}
+
+@media screen and (max-height: 700px) {
+    #splashPageInner {
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        padding-bottom: 60px;
+    }
+
+    body:after {
+        content: 'mobile';
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    body:after {
+        content: 'tablet';
+        display: none;
+    }
+}
+
+/*---------Global Styles--------------*/
+html,
+body {
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+li,
+ul,
+ol,
+a,
+img {
+    padding: 0;
+    margin: 0;
+    font-family: 'PT Sans', sans-serif;
+    color: #18374C;
+}
+
+.sitemap {
+    list-style-type: none;
+    margin: 0 0 16px 16px;
+}
+
+.sitemap>ul {
+    list-style-type: none;
+}
+
+.sitemap>ul>li {
+    margin: 0 0 0 16px;
+    list-style-type: none;
+}
+
+.frmRequestInfo {
+    margin-top: 5px;
+}
+
+.orange-text-sm {
+    color: #F6931D;
+    font-size: 11px;
+}
+
+.ti-input-btn {
+    margin-top: 0px !important;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+a,
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: #18374C;
+}
+
+a.linkOnBlue {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+a.linkOnBlue:hover,
+a.linkOnBlue:focus {
+    color: #f0f0f0;
+    text-decoration: underline;
+}
+
+textarea {
+    resize: none;
+}
+
+.ti-sprite {
+    background: url('../img-sprite/sprite-2x-opt.png') no-repeat;
+    background-size: 304px 98px;
+    display: inline-block;
+    margin: 0 2px;
+    vertical-align: middle;
+}
+
+.ti-sprite.large-white-star {
+    background-position: -2px -2px;
+    width: 21px;
+    height: 20px;
+}
+
+.ti-sprite.large-green-star {
+    background-position: -2px -24px;
+    width: 21px;
+    height: 20px;
+}
+
+.ti-sprite.white-star {
+    background-position: -2px -46px;
+    width: 11px;
+    height: 10px;
+}
+
+.ti-sprite.large-yellow-star {
+    background-position: -183px -69px;
+    width: 21px;
+    height: 20px;
+    margin-right: 2px;
+}
+
+.ti-sprite.yellow-star {
+    background-position: -2px -58px;
+    width: 11px;
+    height: 10px;
+}
+
+.ti-sprite.location-pin {
+    background-position: -66px -46px;
+    width: 11px;
+    height: 18px;
+    vertical-align: text-bottom;
+}
+
+.ti-sprite.envelope {
+    background: url('../img-sprite/mobile-sprite-2x.png') no-repeat;
+    background-size: 312px 114px;
+    background-position: -262px -1px;
+    width: 26px;
+    height: 19px;
+    vertical-align: text-bottom;
+}
+
+.ti-sprite.phone {
+    background: url('../img-sprite/mobile-sprite-2x.png') no-repeat;
+    background-size: 312px 114px;
+    background-position: -290px -1px;
+    width: 24px;
+    height: 20px;
+    vertical-align: text-bottom;
+}
+
+.ti-sprite.yellow-chevron-down {
+    background-position: -123px -2px;
+    width: 20px;
+    height: 10px;
+}
+
+.ti-sprite.orange-chevron-up {
+    background-position: -123px -14px;
+    width: 20px;
+    height: 12px;
+}
+
+.ti-sprite.orange-chevron-down {
+    background-position: -123px -28px;
+    width: 20px;
+    height: 12px;
+}
+
+.ti-sprite.blue-arrow-left {
+    background-position: -79px -46px;
+    width: 50px;
+    height: 50px;
+}
+
+.ti-sprite.blue-arrow-right {
+    background-position: -131px -46px;
+    width: 50px;
+    height: 50px;
+}
+
+.ti-sprite.facebook-icon {
+    background-position: -145px -2px;
+    width: 29px;
+    height: 29px;
+}
+
+.ti-sprite.twitter-icon {
+    background-position: -175px -2px;
+    width: 30px;
+    height: 25px;
+}
+
+.ti-sprite.youtube-icon {
+    background-position: -207px -2px;
+    width: 30px;
+    height: 36px;
+}
+
+.ti-sprite.instagram-icon {
+    background-position: -239px -2px;
+    width: 30px;
+    height: 29px;
+}
+
+.ti-sprite.lock-icon {
+    background-position: -26px -70px;
+    width: 8px;
+    height: 12px;
+}
+
+.ti-sprite.play-button {
+    background-position: -2px -70px;
+    width: 22px;
+    height: 22px;
+}
+
+.ti-sprite.checkmark {
+    background-position: -36px -70px;
+    width: 15px;
+    height: 12px;
+}
+
+.ti-sprite.input-error-icon {
+    background-position: -53px -69px;
+    width: 12px;
+    height: 12px;
+}
+
+.ti-sprite.select-arrows {
+    user-select: auto;
+    background-position: -181px -29px;
+    width: 10px;
+    height: 16px;
+    margin: 7px 10px;
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.container-fluid .ti-row {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: 0;
+}
+
+.container-fluid .ti-row-top {
+    padding-top: 50px;
+}
+
+.container-fluid .ti-row-bottom {
+    padding-bottom: 50px;
+}
+
+.container-fluid .ti-small-banner {
+    text-align: center;
+}
+
+.container-fluid .ti-small-banner h2,
+.container-fluid .ti-small-banner a {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.coaches-2x {
+    width: 60px;
+    height: auto;
+    margin: 10px 0 12px 0;
+}
+
+.variety-2x {
+    width: 58px;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+.smile-2x {
+    width: 52px;
+    height: auto;
+    margin: 6px 0 9px 0;
+}
+
+.container-fluid h2 {
+    color: #fff;
+    position: relative;
+    padding-bottom: 20px;
+    font-size: 44px;
+    font-weight: bold;
+}
+
+.force-break {
+    display: inline-block;
+    color: inherit;
+}
+
+#topHomepageBanner {
+    padding: 50px 0 30px;
+}
+
+#topHomepageBanner h2 {
+    font-size: 28px;
+    font-weight: normal;
+}
+
+#topHomepageBanner h2 strong {
+    font-size: 46px;
+    font-weight: bold;
+}
+
+.container-fluid .ti-small-banner h2,
+#topHomepageBanner h2 {
+    padding-bottom: 0;
+    font-size: 26px;
+}
+
+.container-fluid h2:after {
+    position: absolute;
+    height: 5px;
+    width: 200px;
+    background: #F3EA2B;
+    bottom: 0;
+    left: 0;
+    content: '';
+    display: block;
+}
+
+.container-fluid h2.blue-border:after {
+    background: #146DA8;
+}
+
+.container-fluid h2.orange-border:after {
+    background: #EC7624;
+}
+
+.faq-container h2:after {
+    height: 0;
+}
+
+.container-fluid .ti-small-banner h2:after,
+#topHomepageBanner h2:after {
+    width: 0;
+    height: 0;
+}
+
+.ti-align-right {
+    text-align: right;
+}
+
+.ti-input,
+.ti-textarea {
+    position: relative;
+}
+
+.ti-input label,
+.ti-textarea label {
+    position: absolute;
+    top: 16px;
+    left: 22px;
+    color: #B9B8B8;
+    font-size: 13px;
+    transition: all 0.3s;
+}
+
+.ti-input label:hover,
+.ti-textarea label:hover {
+    cursor: text;
+}
+
+.ti-input .ti-sprite {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+}
+
+.ti-input label.has-content,
+.ti-textarea label.has-content {
+    top: 5px;
+    font-size: 10px;
+    left: 17px;
+}
+
+.ti-input {
+    margin-bottom: 15px;
+}
+
+.ti-textarea {
+    margin-bottom: 20px;
+}
+
+.ti-input,
+.ti-textarea {
+    padding: 0 7px;
+}
+
+.ti-input input,
+.ti-textarea textarea,
+.ti-input select {
+    width: 100%;
+}
+
+.ti-input input {
+    height: 52px;
+    padding-top: 5px;
+    padding-left: 10px;
+    background: #FFFFFF;
+    border: 1px solid #EAEBF2;
+    box-shadow: inset 1px 1px 2px 0 rgba(67, 68, 69, 0.46);
+    border-radius: 4px;
+}
+
+.require-icon {
+    color: #B9B8B8 !important;
+    font-size: 12px;
+    vertical-align: text-top;
+    margin-left: 2px;
+}
+
+.ti-input .ti-error {
+    border: 1px solid #D33613;
+    box-shadow: none;
+    outline: none;
+}
+
+.ti-input .ti-error-message {
+    color: #D33613;
+    font-size: 12px;
+}
+
+.ti-textarea textarea {
+    padding: 15px 10px 10px;
+    background: #FFFFFF;
+    border: 1px solid #EAEBF2;
+    box-shadow: inset 1px 1px 2px 0 rgba(67, 68, 69, 0.46);
+    border-radius: 4px;
+}
+
+.ti-two-col-space-first {
+    padding-right: 40px;
+}
+
+.ti-two-col-space-last {
+    padding-left: 40px;
+}
+
+.ti-left-slider,
+.ti-right-slider {
+    position: absolute;
+    width: 100px;
+    background: transparent;
+    z-index: 99;
+    text-align: center;
+    display: block;
+    top: 0;
+    bottom: 0;
+}
+
+.ti-left-slider {
+    left: 0;
+    background-image: linear-gradient(90deg, #F27123 0%, rgba(243, 112, 33, 0.00) 100%);
+    top: 0;
+}
+
+.ti-right-slider {
+    right: 0;
+    background-image: linear-gradient(-90deg, #F27123 0%, rgba(243, 112, 33, 0.00) 100%);
+    top: 0;
+}
+
+.telNumber {
+    font-size: 30px;
+}
+
+.telephone {
+    padding: 0;
+    margin: 0;
+    font-family: 'PT Sans', sans-serif;
+    color: #18374C;
+}
+
+#notificationBanner h3 {
+    text-align: center;
+}
+
+.jsDismissAcknowledgement {
+    cursor: pointer;
+}
+
+#tiImageSlider .ti-right-slider,
+#tiImageSlider .ti-left-slider {
+    display: block;
+}
+
+#recentlyViewed .ti-left-slider,
+#eventPage .ti-left-slider,
+#gamePage .ti-left-slider,
+#allEventsParent .ti-left-slider {
+    background: -webkit-linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.00) 100%);
+    background-image: linear-gradient(90deg, #fff 0%, rgba(243, 112, 33, 0.00) 100%);
+    top: 0;
+}
+
+#recentlyViewed .ti-right-slider,
+#eventPage .ti-right-slider,
+#gamePage .ti-right-slider,
+#allEventsParent .ti-right-slider {
+    background: -webkit-linear-gradient(-90deg, #fff 0%, rgba(255, 255, 255, 0.00) 100%);
+    background: linear-gradient(-90deg, #fff 0%, rgba(255, 255, 255, 0.00) 100%);
+    top: 0;
+}
+
+#eventPage .ti-left-slider {
+    background: -webkit-linear-gradient(left, rgba(20, 109, 168, 1) 0%, rgba(20, 109, 168, 0) 100%);
+    background: linear-gradient(to right, rgba(20, 109, 168, 1) 0%, rgba(20, 109, 168, 0) 100%);
+}
+
+#eventPage .ti-right-slider {
+    background: -webkit-linear-gradient(left, rgba(20, 109, 168, 0) 0%, rgba(20, 109, 168, 1) 100%);
+    background: linear-gradient(to right, rgba(20, 109, 168, 0) 0%, rgba(20, 109, 168, 1) 100%);
+}
+
+#recentlyViewed .ti-slider-parent,
+#AllEventsParent .ti-slider-parent,
+#gamePage .ti-slider-parent {
+    display: block;
+    margin: 0 auto;
+}
+
+.ti-box-row {
+    display: table;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.ti-box {
+    white-space: normal;
+    width: 31.33%;
+    max-width: 375px;
+    display: table-cell;
+    background: #fff;
+    padding: 0;
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
+    height: auto;
+    margin-right: 2%;
+
+}
+
+.ti-slider-parent .ti-box {
+    margin-right: 35px;
+    overflow-y: hidden;
+}
+
+.ti-box-spacer {
+    display: table-cell;
+    width: 2%;
+    max-width: 30px;
+}
+
+.ti-box .circle-img {
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    display: block;
+    margin: -50px auto 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    line-height: 100px;
+    background: #F9FAFF;
+    border: 1px solid #EAEBF2;
+    text-align: center;
+}
+
+/* changed from top: 22%; */
+
+.ti-box .circle-img img {
+    width: auto;
+    height: auto;
+    max-width: 56px;
+    max-height: 56px;
+    margin: 22px auto;
+}
+
+.ti-box h3 {
+    text-align: center;
+    padding: 70px 0 5px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.ti-box p {
+    padding: 0 20px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.ti-box .explore-link {
+    display: block;
+    text-align: center;
+    text-decoration: underline;
+    color: #D35E13;
+    font-size: 16px;
+    background: #F9FAFF;
+    margin-top: 10px;
+    padding: 8px;
+}
+
+.container-fluid .ti-small-banner {
+    padding: 23px 0;
+}
+
+.container-fluid .ti-small-banner .ti-yellow-button {
+    margin-left: 30px;
+}
+
+/*----------Header/Navigation---------------*/
+#notificationBanner {
+    padding: 9px 0 8px 0;
+}
+
+#notificationBanner p {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+
+#navigation {
+    padding: 15px 0 30px;
+    margin: 0 auto -63px;
+    max-width: 1440px;
+    position: relative;
+}
+
+.ti-underline-element {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #EAEBF2;
+}
+
+#navLinks {
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.15em;
+    width: 100%;
+}
+
+#navLinks .col-sm-3 {
+    text-align: center;
+}
+
+#navLinks a {
+    color: #D35E13;
+    font-size: 18px;
+    padding: 20px 5px;
+    width: 100%;
+    z-index: 9999999;
+    display: block;
+}
+
+#navLinks .sub-menu a {
+    padding: 0;
+    width: auto;
+    height: auto;
+}
+
+#navLinks a:hover {
+    background: #D35E13;
+    color: #fff;
+}
+
+#navLinks a.actives {
+    background: #D35E13;
+    color: #fff;
+}
+
+#navLinks .sub-menu a:hover {
+    color: initial;
+    background: initial;
+}
+
+#navigation .ti-location {
+    margin-top: 2px;
+}
+
+#navigation .ti-location strong {
+    font-size: 16px;
+}
+
+#navigation .ti-location a {
+    font-size: 12px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#navigation .ti-align-right {
+    font-size: 16px;
+}
+
+#navigation .ti-align-right a {
+    font-size: 22px;
+}
+
+#navigation .col-sm-6 {
+    vertical-align: top;
+}
+
+.ti-page-header video {
+    width: 100%;
+}
+
+.ti-page-header .view-game-selection {
+    display: none;
+}
+
+#headerBanner {
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+}
+
+#headerBanner .ti-page-header {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#headerBanner.not-home {
+    height: auto;
+}
+
+#headerBanner.not-home.franchise-page,
+#headerBanner.not-home.franchise-page .ti-page-header {
+    height: auto;
+    padding: 0 10px;
+}
+
+#headerBanner.not-home.franchise-page {
+    padding-bottom: 60px;
+}
+
+#headerBanner.not-home-additional.franchise-page {
+    padding-bottom: 60px;
+}
+
+#headerBanner.not-home.game-page {
+    height: auto;
+}
+
+#headerBanner.not-home.event-page {
+    height: auto;
+}
+
+#headerBanner.not-home.game-page img,
+#headerBanner.not-home.event-page img {
+    margin-bottom: 20px;
+}
+
+#headerBanner.not-home.game-page p,
+#headerBanner.not-home.event-page p {
+    width: 60%;
+    margin: 0 auto 25px;
+}
+
+#headerBanner.not-home:before {
+    background: url('../img/allgames-banner.jpg') no-repeat;
+    background-size: cover;
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    z-index: -1;
+}
+
+#headerBanner.not-home.game-page:before {
+    background-image: url('../img/game-banner.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.av-cart:before {
+    background-image: url('../img/photo-gallery/game-banner_av-cart.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.beat-the-bucket:before {
+    background-image: url('../img/photo-gallery/game-banner-beat-the-bucket.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.booger-wars:before {
+    background-image: url('../img/photo-gallery/game-banner_booger-wars.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.bumper-balls:before {
+    background-image: url('../img/photo-gallery/game-banner_bumper-balls.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.bumper-balls-w-arena:before {
+    background-image: url('../img/photo-gallery/game-banner_bumper-balls-w-arena.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.candy-cannon:before {
+    background-image: url('../img/photo-gallery/game-banner_candy-cannon.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.foam-party:before {
+    background-image: url('../img/photo-gallery/game-banner_foam-party.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.gaga:before {
+    background-image: url('../img/photo-gallery/game-banner_gaga.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.video-game-station:before {
+    background-image: url('../img/photo-gallery/game-banner-game-station.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.gyroscope:before {
+    background-image: url('../img/photo-gallery/game-banner_gyroscope.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.hamster-ball:before {
+    background-image: url('../img/photo-gallery/game-banner_hamster-ball.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.hamster-ball-w-race-track:before {
+    background-image: url('../img/photo-gallery/game-banner_hamster-ball-w-track.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.inflatable-bounce-houses:before {
+    background-image: url('../img/photo-gallery/game-banner_inflatable-bounce-houses.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.inflatable-bungee-joust:before {
+    background-image: url('../img/photo-gallery/game-banner_inflatable-bungee-joust.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.inflatable-obstacle-course:before {
+    background-image: url('../img/photo-gallery/game-banner_inflatable-obstacle-course.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.inflatable-water-slides:before {
+    background-image: url('../img/photo-gallery/game-banner_inflatable-slide.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.laser-tag:before {
+    background-image: url('../img/photo-gallery/game-banner_laser-tag.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.rock-wall:before {
+    background-image: url('../img/photo-gallery/game-banner_rockwall.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.social-photo-booth:before {
+    background-image: url('../img/photo-gallery/game-banner_social-photo-booth.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.u-bot:before {
+    background-image: url('../img/photo-gallery/game-banner_ubot.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.u-launcher:before {
+    background-image: url('../img/photo-gallery/game-banner_ulauncher.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.video-game-theater:before {
+    background-image: url('../img/photo-gallery/game-banner_Video-Game-Theater.jpg');
+    display: block;
+}
+
+#headerBanner.not-home.game-page.nerf-battle:before {
+    background-image: url('../img/photo-gallery/game-banner_nerf-battle.jpg');
+    display: block;
+}
+
+
+#headerBanner.not-home.event-page:before {
+    background-image: url('../img/event-banner.jpg');
+}
+
+#headerBanner.not-home.event-page.events-kids-parties:before {
+    background-image: url('../img/event-images/events-kids-parties.jpg');
+}
+
+#headerBanner.not-home.event-page.events-school-fundraisers:before {
+    background-image: url('../img/event-images/events-school-fundraisers.jpg');
+}
+
+#headerBanner.not-home.event-page.events-teen-parties:before {
+    background-image: url('../img/event-images/events-teen-parties.jpg');
+}
+
+#headerBanner.not-home.event-page.events-church-fundraisers:before {
+    background-image: url('../img/event-images/events-church-fundraisers.jpg');
+}
+
+#headerBanner.not-home.event-page.events-birthday-parties:before {
+    background-image: url('../img/event-images/generic-banner-desktop.jpg');
+}
+
+#headerBanner.not-home.event-page.events-charity-events:before {
+    background-image: url('../img/event-images/events-charity-events.jpg');
+}
+
+#headerBanner.not-home.event-page.events-graduation-parties:before {
+    background-image: url('../img/event-images/events-graduation-parties.jpg');
+}
+
+#headerBanner.not-home.event-page.events-festivals-carnivals:before {
+    background-image: url('../img/event-images/events-festivals-carnivals.jpg');
+}
+
+#headerBanner.not-home.event-page.events-summer-camps:before {
+    background-image: url('../img/event-images/events-summer-camps.jpg');
+}
+
+#headerBanner.not-home.event-page.events-community-events:before {
+    background-image: url('../img/event-images/events-community-events.jpg');
+}
+
+#headerBanner.not-home.event-page.events-company-parties:before {
+    background-image: url('../img/event-images/events-company-parties.jpg');
+}
+
+#headerBanner.not-home.event-page.events-community-events:before {
+    background-image: url('../img/event-images/events-community-events.jpg');
+}
+
+#headerBanner.not-home.event-page.events-customer-employee-appreciation:before {
+    background-image: url('../img/event-images/events-customer-employee-appreciation.jpg');
+}
+
+#headerBanner.not-home.event-page.events-corporate-team-building:before {
+    background-image: url('../img/event-images/events-corporate-team-building.jpg');
+}
+
+#headerBanner.not-home.event-page.events-bar-bat-mitzvahs:before {
+    background-image: url('../img/event-images/events-bar-bat-mitzvahs.jpg');
+}
+
+#headerBanner.not-home.faq-page:before {
+    background-image: url('../img/faq-banner.jpg');
+}
+
+#headerBanner.not-home.all-games-page:before {
+    background-image: url('../img/allgames-banner.jpg');
+}
+
+#headerBanner.not-home.franchise-page:before {
+    background-image: url('../img/g2u-franchise-info-background.jpg');
+}
+
+#headerBanner.not-home.game-page:before {
+    height: 100%;
+}
+
+#headerBanner.not-home.event-page:before {
+    height: 100%;
+}
+
+#headerBanner.not-home:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    display: block;
+    background-color: #18374C;
+    opacity: 0.88;
+    z-index: -1;
+}
+
+#headerBanner.not-home-additional:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    display: block;
+    background-color: #18374C;
+    opacity: 0.88;
+    z-index: -1;
+}
+
+#headerBanner.not-home.game-page:after {
+    height: 100%;
+}
+
+#headerBanner.not-home.event-page:after {
+    opacity: 0.8;
+    height: 100%;
+}
+
+#headerBanner.all-games-page select {
+    width: 263px;
+    height: 48px;
+    cursor: pointer;
+}
+
+#headerBanner.all-games-page div.text-center {
+    margin-top: 15px;
+}
+
+#headerBanner.not-home p {
+    font-size: 22px;
+}
+
+#headerBanner.not-home p.small-text {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#headerBanner.not-home-additional a {
+    display: block;
+    margin: 15px auto 0;
+}
+
+#headerBanner.not-home.all-events-page a {
+    display: block;
+    margin: 15px auto 0;
+}
+
+#headerBanner.not-home-additional p {
+    font-size: 22px;
+    padding: 0 15px;
+}
+
+.padding-from {
+    padding: 25px;
+}
+
+.content-banner {
+    z-index: 1;
+    background-size: cover;
+    display: block;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+}
+
+.g2u-logo {
+    position: relative;
+    z-index: 2;
+}
+
+#headerBanner.not-home.all-events-page:before {
+    background-image: url('../img/allevents-banner.jpg');
+}
+
+#headerBanner.not-home.game-page {
+    padding: 70px 0;
+}
+
+#headerBanner.not-home-additional {
+    padding: 70px 0;
+}
+
+#headerBanner.not-home.game-page .ti-row {
+    padding: 0 15px;
+}
+
+.ti-page-header video {
+    z-index: -1;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+
+.ti-page-header .location-holder {
+    background: #EAEBF2;
+    padding: 25px 40px;
+}
+
+.ti-page-header .location-holder img {
+    height: 54px;
+    width: 54px;
+    margin-right: 10px;
+}
+
+.ti-page-header .text-center>img {
+    max-height: 80px;
+    width: auto;
+}
+
+#headerBanner.not-home.game-page img {
+    max-height: none;
+}
+
+.ti-page-header .location-holder img,
+.ti-page-header .location-holder h3 {
+    display: inline-block;
+}
+
+.ti-page-header .location-holder h3 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.ti-page-header .location-holder a {
+    display: block;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+/* added to make button work like others */
+a.location-button {
+    display: inline-block !important;
+}
+
+.ti-page-header .location-box {
+    width: 380px;
+    position: relative;
+    right: -70%;
+    margin-top: 40px;
+}
+
+.ti-page-header .location-box.no-zipcode-parent {
+    height: auto;
+}
+
+.ti-page-header .location-box.no-zipcode-parent .ti-yellow-button {
+    width: 50px;
+    height: 50px;
+    line-height: 54px;
+}
+
+.ti-page-header .location-box.no-zipcode-parent .location-container {
+    background: #EAEBF2;
+    padding: 50px 30px 15px;
+}
+
+.ti-page-header .location-box.no-zipcode-parent .location-information .ti-call-us {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.ti-page-header .location-box.no-zipcode-parent h2 {
+    font-size: 30px;
+}
+
+.ti-page-header .location-box a.ti-orange-text {
+    font-size: 14px;
+}
+
+.ti-page-header .location-information {
+    background: #fff;
+    padding: 20px 50px;
+    text-align: center;
+}
+
+.ti-page-header .location-information h3,
+.ti-page-header .location-information p,
+.ti-page-header .location-information>div {
+    margin-bottom: 10px;
+}
+
+.ti-page-header .location-information p:last-child {
+    margin-bottom: 0;
+}
+
+.ti-page-header .location-information .ti-call-us {
+    font-size: 20px;
+    color: #18374C;
+}
+
+.ti-page-header .location-information p a {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.ti-page-header .location-information h3 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.ti-page-header .location-information p.ti-orange-text {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ti-page-header h1,
+.ti-page-header p {
+    text-align: center;
+    color: #fff;
+}
+
+.ti-page-header h1 {
+    font-size: 86px;
+    font-weight: bold;
+}
+
+.as-seen-banner {
+    padding: 15px 0;
+    position: relative;
+}
+
+.as-seen-banner .space-helper {
+    display: inline-block;
+    height: 110px;
+    vertical-align: middle;
+}
+
+.links-container {
+    position: relative;
+    height: 60px;
+    text-align: center;
+}
+
+#mobileMenu,
+#navLinks .links-container div.sub-menu {
+    display: none;
+}
+
+#navLinks .links-container {
+    display: table;
+    width: 100%;
+}
+
+#navLinks .links-container>div {
+    position: static;
+    display: table-cell;
+    padding: 0;
+}
+
+#navLinks .links-container div.sub-menu {
+    position: absolute;
+    top: 55px;
+    width: 100%;
+    min-width: 890px;
+    right: 0;
+    z-index: 9999;
+    background: #F9FAFF;
+    padding: 20px;
+    border: 1px solid #EAEBF2;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.39);
+    border-top: 4px solid #D35E13;
+}
+
+#navLinks .links-container div.sub-menu h2 {
+    font-size: 28px;
+    text-align: left;
+    display: inline-block;
+    padding: 0;
+}
+
+#navLinks .links-container div.sub-menu img {
+    max-height: 25px;
+    max-width: 25px;
+    margin-right: 5px;
+}
+
+#navLinks .links-container div.sub-menu a {
+    display: block;
+    text-align: left;
+    color: #2D3F4B;
+    margin: 18px 0;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+#navLinks .links-container div.sub-menu .ti-sub-head {
+    border-bottom: 1px solid #EAEBF2;
+}
+
+#navLinks .links-container div.sub-menu a.ti-orange-text {
+    color: #D35E13;
+    text-decoration: underline;
+}
+
+#navLinks .links-container div.sub-menu .ti-sub-head a {
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+/*----------Homepage-------------*/
+#topHomepageBanner {
+    background: #FFFE83;
+    background: linear-gradient(#FFFE83, #FCBE17);
+}
+
+#topHomepageBanner .col-md-3 {
+    text-align: center;
+    min-height: 100px;
+}
+
+#topHomepageBanner h2 {
+    text-align: left;
+}
+
+#topHomepageBanner p {
+    font-size: 18px;
+}
+
+#somethingForEveryone {
+    height: 600px;
+    position: relative;
+    padding: 0 0 0 15px;
+}
+
+.something-for-everyone>div.col-xs-12:after {
+    background: url(../img/cheering-people-nogradient.png);
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 265px;
+    content: '';
+    display: block;
+}
+
+#somethingForEveryone h2 {
+    padding-top: 70px;
+}
+
+#somethingForEveryone p {
+    color: #fff;
+    font-size: 30px;
+    padding-bottom: 50px;
+    line-height: 32px;
+}
+
+.something-for-everyone {
+    position: relative;
+}
+
+.something-for-everyone>div {
+    background: #F68B4E;
+    background-image: linear-gradient(0deg, #F6AB4E 0%, #F6701D 100%);
+}
+
+.something-for-everyone .excited-kid-parent {
+    height: 600px;
+}
+
+.something-for-everyone .excited-kid {
+    /* background: url(../img/excited-kid-2x.png) no-repeat; */
+    background-size: cover;
+    height: 600px;
+    width: 78%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.row.ti-row.no-side-margin.remove-overflow {
+    position: relative;
+    padding-bottom: 0;
+}
+
+.as-seen-truck {
+    position: absolute;
+    top: -68px;
+    left: 0px;
+}
+
+/* -108px; */
+
+.as-seen-truck img {
+    width: 528px;
+    height: auto;
+}
+
+/* 368px; */
+
+
+/* added sprinter to have both */
+.as-seen-sprinter {
+    position: absolute;
+    top: -108px;
+    left: 20px;
+}
+
+.as-seen-sprinter img {
+    width: 388px;
+    height: auto;
+    left: -10px;
+    position: relative;
+}
+
+.as-seen-title {
+    position: absolute;
+    top: -50px;
+    font-size: 22px;
+    margin-left: 8px;
+}
+
+.as-seen-title>.col-xs-3:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50px;
+    display: block;
+    border-left: 25px solid #f68b1f;
+    border-bottom: 25px solid #f68b1f;
+    border-right: 25px solid transparent;
+    border-top: 25px solid transparent;
+}
+
+.as-seen-franchise-title:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 31%;
+    height: 100%;
+    background: #F68B1F;
+    -webkit-transform-origin: 100% 0;
+    -ms-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+    -webkit-transform: skew(30deg);
+    -ms-transform: skew(30deg);
+    transform: skew(30deg);
+    z-index: -1;
+}
+
+.as-seen-franchise-title:after {
+    background: #4FA2D8;
+    left: 55%;
+    width: 50%;
+    z-index: -1;
+}
+
+.as-seen-franchise-title {
+    position: relative;
+    color: #fff;
+    background: #4FA2D8;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 25px;
+    padding: 10px 0 10px 25px;
+    width: 80%;
+    z-index: 2;
+}
+
+.as-seen-title .col-xs-3 {
+    width: 31%;
+    background: #F68B1F;
+}
+
+.as-seen-title span {
+    color: #fff;
+    padding: 10px;
+    line-height: 30px;
+}
+
+
+
+#planYourParty,
+#planYourParty .col-xs-12 {
+    padding-right: 0;
+}
+
+#gamesTheyLove h2 {
+    margin-top: 40px;
+    padding-left: 15px;
+}
+
+#gamesTheyLove h2:after {
+    left: 15px;
+}
+
+#gamesTheyLove .ti-orange-background {
+    background-image: url(../img/game-background.png);
+}
+
+.no-location-icon {
+    width: 89px;
+    height: 112px;
+    margin-bottom: 15px;
+}
+
+.banner-zip-input-container>div {
+    display: inline-block;
+    width: 18%;
+    height: 40px;
+    vertical-align: top;
+}
+
+#mapAndContact.no-zipcode form a {
+    width: 16%;
+    vertical-align: top;
+}
+
+.banner-zip-input-container>div.ti-input,
+#mapAndContact.no-zipcode .ti-input input {
+    width: 80%;
+    top: 0;
+    display: inline-block;
+}
+
+.ti-page-header .location-box.no-zipcode-parent .location-information {
+    height: auto;
+}
+
+.home-game-name {
+    max-width: 60%;
+    margin-bottom: 20px;
+}
+
+.home-icon {
+    width: 20%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/*----------All Games Page--------------*/
+#allGamesContent h2 {
+    margin-bottom: 20px;
+}
+
+#allGamesContent .row {
+    margin-top: -1%;
+}
+
+#allGamesContent .ti-box {
+    width: 31.33%;
+    margin: 1%;
+    padding: 0;
+    max-width: none;
+}
+
+#gamesWithIcons,
+#allGamesContent {
+    position: relative;
+    padding: 50px 0 30px 0;
+    z-index: 99;
+}
+
+#gamesWithIcons:before,
+#allGamesContent:before {
+    background: url(../img/game-background.png);
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    content: '';
+    opacity: 0.1;
+}
+
+#allGamesContent {
+    background-image: url(../img/game-background.png);
+}
+
+#allGamesContent:before {
+    background: url(../img/cheering-people-gradient.png);
+    /* height: 262px; */
+    opacity: 1.0;
+}
+
+#gamesWithIcons .col-sm-3,
+#gamesWithIcons .col-sm-2 {
+    padding-bottom: 20px;
+}
+
+#gamesWithIcons .home-icon a {
+    display: inline-block;
+    line-height: 65px;
+    color: #fff;
+}
+
+#gamesWithIcons img {
+    width: 40px;
+    height: auto;
+    line-height: 75px;
+    max-width: none;
+}
+
+#gamesWithIcons .col-sm-4 {
+    margin-bottom: 20px;
+}
+
+#gamesWithIcons .home-game-name p,
+#gamesWithIcons .home-game-name a {
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.25em;
+}
+
+#gamesWithIcons .home-game-name a {
+    display: inline-block;
+}
+
+#planYourParty {
+    position: relative;
+}
+
+#planYourParty:before {
+    background: url(../img/party-background.png);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    content: '';
+}
+
+#planYourParty img {
+    width: 60px;
+    height: auto;
+}
+
+#planYourParty .col-sm-2 {
+    text-align: right;
+    max-width: 60px;
+}
+
+#planYourParty h3 {
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#planYourParty p {
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 30px;
+    margin-bottom: 35px;
+}
+
+#planYourParty .excited-woman-parent {
+    height: 600px;
+}
+
+#planYourParty .excited-woman {
+    /* background: url(../img/cheering-woman-2x.png) no-repeat; */
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/*--------------All Events Page------------*/
+#anyEvent {
+    position: relative;
+}
+
+#anyEvent:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 260px;
+    background: url(../img/cheering-people-gradient.png);
+}
+
+#anyEvent .limited-width>.row {
+    margin-top: 5px;
+}
+
+#anyEvent .limited-width>.row>a {
+    display: inline-block;
+    width: 31.33%;
+    margin: 1%;
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
+    font-size: 20px;
+    font-weight: bold;
+    color: #2D3F4B;
+    -ms-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#anyEvent .limited-width>.row>a:hover {
+    background: #fff3ea;
+}
+
+#anyEvent .limited-width .col-md-4 {
+    height: 85px;
+    line-height: 22px;
+}
+
+#anyEvent .limited-width .col-md-4>div {
+    display: inline-block;
+}
+
+#anyEvent .limited-width .col-md-4>div:first-child {
+    line-height: 85px;
+    min-width: 50px;
+    text-align: center;
+    margin-right: 10px;
+    padding-top: 0;
+}
+
+#anyEvent .limited-width .col-md-4>div:last-child {
+    max-width: 76%;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+#anyEvent .limited-width div img {
+    height: auto;
+    width: auto;
+    max-width: 50px;
+    max-height: 50px;
+}
+
+#allEventsSlider {
+    padding: 40px 0;
+}
+
+#allEventsSlider h2 {
+    max-width: 1440px;
+    margin: 0 auto 30px !important;
+    padding: 0 0 20px;
+}
+
+.default-container {
+    margin-bottom: 15px;
+    background: #FFFFFF;
+    border: 1px solid #EAEBF2;
+    padding: 25px 60px 25px 30px;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.default-container h2 {
+    color: #333;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.default-container h2::after {
+    height: 0;
+}
+
+
+.text-container {
+    border: none;
+}
+
+/*------------FAQ Page--------------*/
+#faqContent {
+    background: #F9FAFF;
+    padding: 50px 130px;
+}
+
+.faq-container {
+    margin-bottom: 15px;
+    background: #FFFFFF;
+    border: 1px solid #EAEBF2;
+    padding: 25px 60px 25px 30px;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.faq-container p,
+.faq-container ul {
+    cursor: text;
+}
+
+.faq-container a {
+    cursor: pointer;
+}
+
+.faq-container:after {
+    background: url('../img-sprite/sprite-2x-opt.png') no-repeat;
+    background-size: 304px 98px;
+    display: block;
+    margin: 0 5px;
+    background-position: -123px -28px;
+    width: 20px;
+    height: 12px;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    content: '';
+}
+
+.faq-container.active:after {
+    background-position: -123px -14px;
+    width: 20px;
+    height: 12px;
+}
+
+.faq-container h2 {
+    color: #18374C;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 0;
+}
+
+.faq-container p {
+    display: none;
+    padding-top: 20px;
+}
+
+.faq-container.active p {
+    display: block;
+}
+
+#recentlyViewed {
+    padding: 50px 0;
+}
+
+#recentlyViewed h2 {
+    max-width: 1440px;
+    margin: 0 auto 30px !important;
+    padding: 0 0 20px;
+}
+
+#recentlyViewed .ti-slider-parent,
+#gamePage .ti-slider-parent,
+#tiImageSlider .ti-slider-parent {
+    max-width: none !important;
+}
+
+#recentlyViewed .ti-box,
+#eventPage .ti-box,
+#gamePage .ti-box,
+#franchiseParent .ti-box {
+    width: 31.33%;
+}
+
+#franchiseParent .ti-box {
+    padding-bottom: 40px;
+}
+
+/*-----------Franchise Page-------------*/
+#franchiseParent #floatingBanner {
+    background: #FFFFFF;
+    border: 1px solid #EAEBF2;
+    padding: 35px 0;
+    position: relative;
+    z-index: 2;
+    top: -60px;
+}
+
+#franchiseParent #floatingBanner h2 {
+    color: #18374C;
+    line-height: 1.25em;
+    font-size: 1.25em;
+    padding: 10px 10px 0;
+}
+
+#franchiseParent #floatingBanner .banner-row img {
+    width: 35px;
+    height: auto;
+}
+
+#franchiseParent #floatingBanner .banner-row.first img {
+    position: relative;
+    top: 0px;
+    left: 7px;
+}
+
+#franchiseParent #floatingBanner .banner-row {
+    width: 23%;
+    margin: 0 1%;
+    height: 50px;
+    border-right: 1px solid #EAEBF2;
+}
+
+#franchiseParent #floatingBanner .banner-row:first-child {
+    margin-left: 0;
+}
+
+#franchiseParent #floatingBanner .banner-row:last-child {
+    border-right: none;
+    margin-right: 0;
+}
+
+#franchiseParent #floatingBanner .banner-row,
+#franchiseParent #floatingBanner .banner-row p,
+#franchiseParent #floatingBanner .banner-row img {
+    display: inline-block;
+    font-size: 18px;
+    color: #18374C;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#franchiseParent #floatingBanner .banner-row:not(.first) p {
+    width: 70%;
+    text-align: left;
+}
+
+#franchiseParent #floatingBanner .banner-row.first+.banner-row p {
+    width: 42%;
+}
+
+#franchiseParent #floatingBanner .banner-row:not(.first) img {
+    margin-right: 10px;
+}
+
+#franchiseParent #floatingBanner .banner-row.first p,
+#franchiseParent #floatingBanner .banner-row.first p span {
+    text-align: center;
+    line-height: 16px;
+    position: relative;
+    top: 5px;
+}
+
+#franchiseParent #floatingBanner .banner-row.first p span.top {
+    display: block;
+    font-size: 34px;
+}
+
+#franchiseParent #floatingBanner .banner-row.first p span.bottom {
+    position: relative;
+    top: 15px;
+}
+
+#franchiseParent #floatingBanner .banner-row.first p span.ti-orange-text {
+    font-weight: bold;
+}
+
+#franchiseParent #floatingBanner .banner-row .banner-in {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    background: #F9FAFF;
+    border: 1px solid #EAEBF2;
+    padding: 0;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: 10px;
+    margin: 0 8px;
+    text-align: center;
+}
+
+#franchiseParent #franchiseContent {
+    background: #F9FAFF;
+    padding-top: 115px;
+    margin-top: -122px;
+}
+
+#franchiseContent div[class^="col-"] div[class^="col-"] {
+    padding: 0;
+}
+
+#franchiseContent .franchise-text,
+#franchiseContent h2 {
+    padding-right: 20px;
+}
+
+#franchiseParent h2 span,
+#gamePage h2 span {
+    display: block;
+    font-size: 30px;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+#franchiseParent .ti-box-row {
+    width: 100%;
+}
+
+#franchiseParent .ti-box-row:before,
+#franchiseParent .ti-box-row:after {
+    display: none;
+}
+
+#franchiseParent .ti-box,
+#gamePage .ti-box-container .ti-box {
+    text-align: center;
+    vertical-align: top;
+}
+
+#franchiseParent .ti-box {
+    padding: 0 10px 25px;
+}
+
+#franchiseParent .ti-box img,
+#gamePage .ti-box-container .ti-box img {
+    height: 75px;
+    width: auto;
+    margin-top: 30px;
+}
+
+#franchiseParent .ti-box h3,
+#gamePage .ti-box-container .ti-box h3 {
+    padding-top: 20px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+#franchiseParent .franchise-text {
+    margin-top: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    padding: 0 15px 0 0;
+}
+
+#franchiseParent .franchise-text:last-child {
+    padding: 0 0 0 15px;
+}
+
+#franchiseParent .franchise-text p+p {
+    margin-top: 35px;
+}
+
+#franchiseParent .franchise-heading {
+    width: 100%;
+}
+
+#franchiseParent #franchiseContent .franchise-text {
+    padding: 0 20px 0 0;
+}
+
+
+.as-seen-banner.franchise-banner>div {
+    height: 110px;
+}
+
+.as-seen-banner.franchise-banner>.as-seen-franchise-title-container {
+    min-width: 204px;
+    height: auto;
+}
+
+#eventPage .games h2 p,
+#gamePage .ti-box-container h2 p {
+    font-size: 30px;
+    color: #fff;
+    font-weight: normal;
+    margin: 5px 0 8px;
+
+}
+
+#contactPage h2 {
+    font-family: proxima-nova, Helvetica, arial, sans-serif !important;
+    font-size: 1.2em !important;
+    font-weight: 700 !important;
+    line-height: 1.8em !important;
+}
+
+#contactPage p {
+    font-family: proxima-nova, Helvetica, Arial, sans-serif;
+    font-size: 0.9em;
+    font-weight: 400;
+    line-height: 1.5em;
+
+}
+
+
+/*--------Event Page-----------*/
+#eventPage .game-content p {
+    line-height: 30px;
+}
+
+#eventPage h2 {
+    margin-bottom: 25px;
+}
+
+#eventPage .ti-small-banner h2 {
+    margin: 0;
+}
+
+#eventPage .games {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#eventPage .games h2 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#eventPage .games h2:after {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/*-------Game Page-----------*/
+#gamePage .ti-box-container .ti-box {
+    height: 275px;
+}
+
+#gamePage .ti-box-container .ti-box h3 {
+    font-size: 16px;
+    color: #EC7624;
+}
+
+#gamePage .ti-box-container .ti-box p {
+    font-size: 28px;
+    color: #18374C;
+    margin-top: 10px;
+}
+
+#gamePage .ti-box-container .ti-box p.text-sm {
+    font-size: 18px;
+}
+
+#gamePage .ti-box-container .ti-box .ti-input {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#gamePage .ti-box-container .ti-box .ti-yellow-button {
+    width: 15%;
+    margin-left: 4px;
+    line-height: 26px;
+    height: 34px;
+    padding-top: 6px;
+}
+
+/* display: inline-block; */
+
+#gamePage .game-content h2 {
+    margin-bottom: 30px;
+}
+
+#gamePage .game-content p {
+    font-size: 16px;
+    line-height: 30px;
+}
+
+#gamePage .ti-box-row {
+    width: 100%;
+}
+
+#gamePage .ti-box-row:before,
+#gamePage .ti-box-row:after {
+    display: none;
+}
+
+/*----------Splash Page------------*/
+#splashPage {
+    width: 100%;
+    height: 1200px;
+    min-height: 700px;
+    position: relative;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+#splashPage.splash-collapse {
+    min-height: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    -ms-transition: height 1s;
+    -webkit-transition: height 1s;
+    transition: height 1s;
+}
+
+#splashPage.no-video-support {
+    background: url(../img/placeholder-vid.jpg) no-repeat top center #ec7624;
+}
+
+#splashPage:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    opacity: 0.2;
+    z-index: 99;
+}
+
+#splashPage.ios-device:after,
+#headerBanner.ios-device:after {
+    background-color: transparent;
+    opacity: 1.0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+}
+
+#splashPage #splashPageInner {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#splashPage .splash-wrapper {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    z-index: 99999999;
+    max-width: 100%;
+}
+
+#splashPage video {
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+#splashPage img {
+    position: relative;
+    top: -4px;
+    left: -42px;
+    right: 0;
+    width: 700px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    z-index: 9999;
+    max-width: none;
+    margin-bottom: -100px;
+}
+
+#splashPage .splash-box {
+    width: 530px;
+    max-width: 95%;
+    display: block;
+    margin: 0 auto;
+    background: #146DA8;
+    opacity: 0.9;
+    padding: 100px 50px 50px;
+    text-align: center;
+    position: static;
+    z-index: 999;
+}
+
+#splashPage .splash-ziperror {
+    background: #D33613 !important;
+}
+
+#splashPage .splash-box .ziperror {
+    font-size: 18px;
+}
+
+#splashPage.no-zip .splash-box {
+    padding-bottom: 100px;
+}
+
+#splashPage .splash-box p,
+#splashPage .splash-box h1 {
+    color: #fff;
+}
+
+#splashPage h1 {
+    font-size: 44px;
+    font-weight: bold;
+}
+
+#splashPage .splash-box p {
+    margin-bottom: 30px;
+    font-size: 26px;
+}
+
+#splashPage .splash-box .ti-input,
+#splashPage .splash-box a.ti-yellow-button {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#splashPage .splash-box .ti-input {
+    width: 80%;
+    margin-right: 5px;
+}
+
+#splashPage .splash-box .ti-input input {
+    height: 60px;
+    font-size: 30px;
+    opacity: 1.0;
+}
+
+#splashPage .splash-box label {
+    font-size: 20px;
+    top: 17px;
+}
+
+#splashPage .splash-box label.has-content {
+    top: 3px;
+    font-size: 10px;
+}
+
+#splashPage .splash-box a.ti-yellow-button {
+    width: 15%;
+    line-height: 60px;
+    height: 60px;
+}
+
+#splashPage .splash-box .ti-error {
+    border: 1px solid #D33613;
+    box-shadow: none;
+    outline: none;
+}
+
+#splashPage .splash-box .ti-error-message {
+    color: #fff;
+    text-align: center;
+    margin-top: 4px;
+    font-size: 13px;
+}
+
+/* float: left; change text-align from left */
+
+#splashPage .continue-to-site {
+    position: static;
+    display: block;
+    margin: 40px auto 0;
+    width: 285px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background: rgba(236, 118, 36, 0.80);
+    border-radius: 41px;
+    text-align: center;
+    z-index: 999;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+}
+
+#splashPage .continue-to-site:hover {
+    cursor: pointer;
+    background: rgba(236, 118, 36, 1);
+    -webkit-transform: translateY(8px);
+    transform: translateY(5px);
+}
+
+/*------------Footer----------------*/
+#testimonials {
+    background: #95CB4A;
+}
+
+#testimonials .img-container,
+#testimonials .testimonial-content {
+    display: inline-block;
+}
+
+#testimonials .testimonial-content {
+    padding: 0 75px;
+}
+
+#testimonials .testimonial-content p {
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 33px;
+}
+
+#testimonials .testimonial-content p.review-name {
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#testimonials .star-container {
+    margin-bottom: 35px;
+}
+
+#testimonials.alternative-footer {
+    text-align: center;
+    padding: 70px 0;
+    position: relative;
+}
+
+#testimonials.alternative-footer:before,
+#testimonials.alternative-footer:after {
+    position: absolute;
+    width: 375px;
+    height: 241px;
+    content: '';
+    display: block;
+}
+
+#testimonials.alternative-footer:before {
+    background: url(../img/quote-left.png) no-repeat;
+    top: 0;
+    left: 0;
+}
+
+#testimonials.alternative-footer:after {
+    background: url(../img/quote-right.png) no-repeat;
+    bottom: 0;
+    right: 0;
+}
+
+#testimonials.alternative-footer p {
+    color: #fff;
+    font-size: 22px;
+}
+
+#testimonials.alternative-footer p.testimonial-quote {
+    font-size: 30px;
+    position: relative;
+    padding: 0 40px 40px;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+#testimonials.alternative-footer p.testimonial-quote:after {
+    position: absolute;
+    width: 85px;
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    margin: 0 auto;
+    content: '';
+    background: #146DA8;
+}
+
+#testimonials.alternative-footer p.review-name {
+    margin-top: 20px;
+}
+
+#testimonials .testimonial-content {
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+#testimonials .testimonial-content .testimonial-cell {
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    max-width: 80%;
+    position: absolute;
+    height: auto;
+    right: -100%;
+    -webkit-transition: right 500ms;
+    -moz-transition: right 500ms;
+    -o-transition: right 500ms;
+    transition: right 500ms;
+}
+
+#testimonials .testimonial-content .testimonial-cell.active {
+    right: 10%;
+}
+
+#mapAndContact {
+    background: url(../img/map-placeholder.jpg) no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#mapAndContact.no-zipcode {
+    background: url(../img/dot-map.jpg) no-repeat;
+}
+
+#mapAndContact.no-zipcode p {
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+
+#mapAndContact.no-zipcode input {
+    height: 48px;
+}
+
+#footerContact {
+    position: relative;
+}
+
+#footerContact .row {
+    padding: 0;
+}
+
+#mapAndContact,
+#footerContact {
+    height: auto;
+}
+
+#footerContact {
+    background: #fff;
+    margin-right: 100px;
+    padding: 80px 100px;
+    background: #F9FAFF;
+}
+
+#footerContact h3,
+#footerContact p {
+    text-align: center;
+}
+
+#footerContact p a {
+    font-size: 18px;
+}
+
+#footerContact h3 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EAEBF2;
+    font-size: 36px;
+}
+
+#footerContact p {
+    padding: 20px 0;
+}
+
+#footerContact .ti-yellow-button {
+    margin-right: 7px;
+}
+
+#alternativeContact {
+    padding: 70px 130px;
+    background: #146DAE;
+    background-image: linear-gradient(-180deg, #146DA8 0%, #18374C 100%);
+    position: relative;
+}
+
+#alternativeContact h2 {
+    margin-bottom: 50px;
+}
+
+#alternativeContact #footerContact {
+    margin-right: 0;
+}
+
+#alternativeContact select,
+.ti-input select {
+    height: 52px;
+    appearance: auto;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #FFFFFF;
+    border: 1px solid #EAEBF2;
+    box-shadow: inset 1px 1px 2px 0 rgba(67, 68, 69, 0.46);
+    border-radius: 4px;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f2f1f1', GradientType=0);
+    width: 100%;
+    padding: 0 30px 0 10px;
+}
+
+#alternativeContact select.inactive {
+    color: #B9B8B8;
+}
+
+#alternativeContact select option:first-child {
+    color: #B9B8B8;
+}
+
+#alternativeContact .checkbox-parent,
+#alternativeContact .checkbox-text {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#alternativeContact .checkbox-parent {
+    width: 5%;
+    max-width: 20px;
+    margin-left: 10px;
+}
+
+#alternativeContact .checkbox-text {
+    width: 90%;
+}
+
+#alternativeContact .button-parent {
+    text-align: center;
+}
+
+#alternativeContact .button-parent .ti-yellow-button,
+#alternativeContact .privacy-parent {
+    margin-top: 20px;
+}
+
+#alternativeContact .privacy-parent p {
+    font-size: 12px;
+}
+
+#alternativeContact .ti-bottom {
+    position: absolute;
+    bottom: 70px;
+    width: 25%;
+    text-align: center;
+}
+
+#bottomNav {
+    background: url(../img/cheering-people-gradient.png) repeat-x center;
+    background-size: cover;
+    height: 265px;
+    margin: 0;
+}
+
+#bottomNav .page-links {
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+#bottomNav .social-media-links {
+    display: inline-block;
+    text-align: right;
+}
+
+#bottomNav .page-link-columns {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+#bottomNav .ti-content {
+    padding-top: 218px;
+}
+
+#bottomNav .ti-nav-content {
+    margin-right: 30px;
+    display: inline-block;
+    text-align: center;
+}
+
+#bottomNav .ti-nav-content a {
+    color: #fff;
+}
+
+#bottomNav .social-media-links a {
+    margin: 0 5px;
+}
+
+#bottomFooter {
+    padding: 10px 30px;
+    background: #F68B1F;
+}
+
+#bottomFooter span,
+#bottomFooter a {
+    color: #fff;
+}
+
+#testimonials .img-container {
+    background: url(../img/testimonial-image-2x.jpg) no-repeat;
+    background-size: cover;
+    height: 400px;
+    width: 41.66666667%;
+    position: relative;
+    overflow: hidden;
+}
+
+#testimonials .img-container:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    bottom: 0;
+    left: 50%;
+    right: -5px;
+    background: url(../img/green-swoosh-2x.png) no-repeat;
+    background-size: auto 100%;
+    background-position: top right;
+}
+
+#bottomFooterNav a {
+    position: relative;
+    margin-right: 20px;
+}
+
+#bottomFooterNav a:after {
+    position: absolute;
+    top: -2px;
+    right: -14px;
+    content: '|';
+    color: #fff;
+}
+
+#bottomFooterNav a:last-child:after {
+    display: none;
+}
+
+/*--------Global Settings-----------*/
+.container-fluid .no-padding,
+.container-fluid .row.no-padding {
+    padding: 0;
+}
+
+.container-fluid>div {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container-fluid .ti-blue-background {
+    background: #146DA8;
+}
+
+.container-fluid .ti-dark-blue-text {
+    color: #18374C;
+}
+
+.container-fluid .ti-light-blue-background {
+    background: #4FA2D8;
+}
+
+.container-fluid .ti-blue-gradient-background {
+    background: #146DA8;
+    background-image: linear-gradient(-1deg, #146DA8 0%, #0E5382 100%);
+}
+
+.container-fluid .ti-light-orange-background {
+    background: #F6931D;
+}
+
+.container-fluid .ti-orange-background {
+    background: #F37021;
+}
+
+.container-fluid .ti-dark-orange-background {
+    background: #D35E13;
+}
+
+.container-fluid .ti-orange-text {
+    color: #EC7624;
+}
+
+.container-fluid .ti-light-orange-text {
+    color: #F6931D;
+}
+
+.container-fluid .reviews-background {
+    background: #A7D763;
+    background: linear-gradient(#A7D763, #87BD3E);
+}
+
+.container-fluid .ti-off-white-background {
+    background: #F9FAFF;
+}
+
+#franchiseParent .franchise-banner {
+    background: #EAEBF2;
+
+}
+
+#franchiseParent .franchise-banner h2,
+#franchiseParent .franchise-banner a {
+    color: #18374C;
+}
+
+#franchiseParent .franchise-banner-orange {
+    color: #FFF;
+    background: #CD5314;
+}
+
+.container-fluid .ti-yellow-background {
+    background: #F3EA2B;
+}
+
+.container-fluid .ti-error-text {
+    color: #D33613;
+}
+
+.container-fluid .ti-white-text {
+    color: #fff;
+}
+
+.container-fluid .border-orange-right {
+    border-right: 1px solid #F37021;
+}
+
+.container-fluid .ti-yellow-button {
+    display: inline-block;
+    width: 232px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    background: #F3EA2B;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
+    vertical-align: super;
+    text-transform: uppercase;
+    border: 0;
+}
+
+.green-button {
+    color: #ffffff !important;
+    background: #69c85e !important;
+}
+
+/* 336600, 006633 */
+
+
+.green-button:hover {
+    color: #f0f0f0;
+    background: #336600 !important;
+}
+
+.fa-sm {
+    font-size: 0.5em;
+}
+
+.box-heading.av-cart {
+    background: url(../img/game-images/av-cart.jpg) no-repeat;
+}
+
+.box-heading.beat-the-bucket {
+    background: url(../img/game-images/beatthebucket.jpg) no-repeat;
+}
+
+.box-heading.booger-wars {
+    background: url(../img/game-images/booger-wars.jpg) no-repeat;
+}
+
+.box-heading.bumper-balls {
+    background: url(../img/game-images/bumper-balls.jpg) no-repeat;
+}
+
+.box-heading.bumper-balls-w-arena {
+    background: url(../img/game-images/bumper-balls-w-arena.jpg) no-repeat;
+}
+
+.box-heading.candy-cannon {
+    background: url(../img/game-images/candy-cannon.jpg) no-repeat;
+}
+
+.box-heading.foam-party {
+    background: url(../img/game-images/foam-party.jpg) no-repeat;
+}
+
+.box-heading.gaga {
+    background: url(../img/game-images/gaga.jpg) no-repeat;
+}
+
+.box-heading.video-game-station {
+    background: url(../img/game-images/game-station.jpg) no-repeat;
+}
+
+.box-heading.gyroscope {
+    background: url(../img/game-images/gyroscope.jpg) no-repeat;
+}
+
+.box-heading.laser-tag {
+    background: url(../img/game-images/laser-tag.jpg) no-repeat;
+}
+
+.box-heading.hamster-ball {
+    background: url(../img/game-images/hamster-ball.jpg) no-repeat;
+}
+
+.box-heading.hamster-ball-w-race-track {
+    background: url(../img/game-images/hamster-ball-w-race-track.jpg) no-repeat;
+}
+
+.box-heading.inflatable-water-slides {
+    background: url(../img/game-images/inflatable-water-slide.jpg) no-repeat;
+}
+
+.box-heading.inflatable-obstacle-course {
+    background: url(../img/game-images/inflatable-obstacle-course.jpg) no-repeat;
+}
+
+.box-heading.inflatable-bounce-houses {
+    background: url(../img/game-images/inflatable-bounce-house.jpg) no-repeat;
+}
+
+.box-heading.inflatable-bungee-joust {
+    background: url(../img/game-images/inflatable-bungee-joust.jpg) no-repeat;
+}
+
+.box-heading.rock-wall {
+    background: url(../img/game-images/rock-wall.jpg) no-repeat;
+}
+
+.box-heading.u-bot {
+    background: url(../img/game-images/u-bot.jpg) no-repeat;
+}
+
+.box-heading.u-launcher {
+    background: url(../img/game-images/u-launcher.jpg) no-repeat;
+}
+
+/* .box-heading.video-game-theater { background: url(../img/game-images/video-game-theater.jpg) no-repeat; } */
+.box-heading.social-photo-booth {
+    background: url(../img/game-images/social-photo-booth.jpg) no-repeat;
+}
+
+.box-heading.nerf-battle {
+    background: url(../img/game-images/nerf-battle.jpg) no-repeat;
+}
+
+
+.container-fluid .box-heading {
+    background-size: cover;
+    height: 250px;
+    background-position: center;
+}
+
+/* above changed from 125px to 250px  */
+
+.top-index {
+    z-index: 50;
+}
+
+.container-fluid .limited-width {
+    max-width: 1440px;
+    display: block;
+    margin: 0 auto;
+}
+
+.container-fluid .no-margin {
+    margin: 0;
+}
+
+.container-fluid .no-side-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.container-fluid .no-side-margin {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container-fluid .remove-overflow {
+    overflow: hidden;
+}
+
+.ti-inline-block {
+    display: inline-block !important;
+    vertical-align: top;
+}
+
+#gamesTheyLove .ti-inline-block {
+    vertical-align: middle;
+}
+
+.ti-seven-wide {
+    width: 12.9%;
+    margin-right: 1%;
+    display: inline-block;
+}
+
+.ti-seven-wide:last-child {
+    margin-right: 0;
+}
+
+.ti-white-box {
+    color: #fff;
+    border: 1px solid #fff;
+    text-align: center;
+    padding: 13px 0;
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.ti-white-box:hover {
+    color: #18374C;
+    background: #fff;
+}
+
+.as-seen-banner div.ti-seven-wide {
+    display: inline-block;
+}
+
+.as-seen-images img {
+    max-width: 105px;
+    height: auto;
+}
+
+.as-seen-banner .as-seen-images {
+    float: right;
+    width: 100%;
+}
+
+.as-seen-banner .as-seen-images .col-xs-1 {
+    width: auto;
+}
+
+.container-fluid .no-border:after,
+.container-fluid h2.no-border:after {
+    border: none;
+    display: none;
+
+}
+
+.ti-break-line {
+    display: block;
+}
+
+#floatingBanner .ti-break-line,
+#headerBanner.franchise-page .ti-break-line {
+    display: inline-block;
+}
+
+#tiImageSlider {
+    position: relative;
+}
+
+#tiImageSlider .ti-left-slider,
+#tiImageSlider .ti-right-slider {
+    top: 0;
+    height: 100%;
+}
+
+#tiImageSlider .ti-box {
+    box-shadow: none;
+    padding-bottom: 0;
+    max-width: none;
+    width: 640px;
+    height: 427px;
+    margin: 0;
+    float: none;
+    display: inline-block;
+}
+
+#tiImageSlider .ti-left-slider,
+#tiImageSlider .ti-right-slider {
+    height: 100%;
+}
+
+#tiImageSlider img {
+    width: 640px;
+    height: 427px;
+}
+
+html,
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#map {
+    height: 660px;
+    width: 100%;
+}
+
+.google-maps {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#mapAndContact {
+    background: transparent;
+    position: relative;
+    min-height: 660px;
+}
+
+#mapAndContact #footerContact {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    padding: 30px 50px 0 50px;
+    z-index: 1;
+}
+
+/* button hover */
+.ti-yellow-button:hover {
+    background: #f3d52b;
+}
+
+/* nav updates */
+#navLinks .links-container div.sub-menu a:hover {
+    color: #EC7624;
+    background: none;
+    ;
+}
+
+/* location updates */
+.no-zipcode #footerContact .ti-yellow-button {
+    width: 15%;
+}
+
+/* in hero */
+.location-holder-place {
+    width: auto;
+    width: calc(100% - 64px);
+}
+
+.ti-page-header .location-holder img {
+    margin-right: 5px;
+}
+
+.location-box .ti-input,
+.update-location .ti-input {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.location-box .ti-input .ti-error,
+.update-location .ti-input .ti-error {
+    border: 1px solid #D33613;
+    box-shadow: none;
+    outline: none;
+}
+
+.location-box .ti-input .ti-error-message,
+.update-location .ti-input .ti-error-message {
+    display: block;
+    clear: both;
+}
+
+#headerBanner .location-box .ti-input .ti-sprite.input-error-icon {
+    top: -17px;
+}
+
+.update-location .ti-input .ti-sprite.input-error-icon,
+.update-location .ti-input .ti-sprite.checkmark {
+    top: 12px;
+}
+
+.location-box .ti-input .zip-code-input {
+    width: 205px;
+}
+
+.location-box .update-location .ti-yellow-button {
+    float: none;
+}
+
+.location-box .edit .update-location {
+    width: 100%;
+}
+
+/* in header */
+#navigation .ti-location.edit {
+    margin-top: 0;
+}
+
+.update-location .ti-yellow-button {
+    width: auto;
+    height: 33px;
+    line-height: 33px;
+    vertical-align: top;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.ti-input .zip-code-input {
+    height: 35px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    vertical-align: top;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 1px 1px 5px 0px rgba(201, 201, 201, 1);
+    -moz-box-shadow: inset 1px 1px 5px 0px rgba(201, 201, 201, 1);
+    box-shadow: inset 1px 1px 5px 0px rgba(201, 201, 201, 1);
+}
+
+#locationBreak .ti-input .zip-code-input {
+    font-size: 14px;
+    width: 160px;
+}
+
+.update-location {
+    display: none;
+}
+
+.edit .update-location {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.location-update-wrap .location-pin {
+    vertical-align: middle;
+}
+
+/* validation */
+.ti-input .ti-sprite {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+}
+
+/* all games */
+.ti-page-header .suggested-games p {
+    color: #18374c;
+}
+
+.ti-page-header .suggested-games .ti-box {
+    width: 31.33%;
+    margin: 1%;
+    padding: 0;
+    max-width: none;
+}
+
+#headerBanner.all-games-page .ti-page-header {
+    padding: 0 20px;
+}
+
+#allGamesContent {
+    padding: 30px 20px 50px 20px;
+}
+
+.suggested-games {
+    padding: 30px 0 0;
+    margin-bottom: 0;
+}
+
+.continue-to-site.view-all-games {
+    display: block;
+    margin: 30px auto 0 auto;
+    width: 285px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background: rgba(236, 118, 36, 0.80);
+    border-radius: 41px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#headerBanner.not-home .suggested-games p {
+    font-size: 16px;
+}
+
+#mobile-bottom-nav {
+    display: none;
+}
+
+.container-fluid .content-padding {
+    padding: 50px 30px;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    z-index: 9999999;
+    background: black;
+    -moz-opacity: .8;
+    opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha (opacity=80);
+}
+
+#videoModal {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    margin: auto;
+    z-index: 9999999;
+    width: auto;
+    max-width: 800px;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#videoModal video {
+    width: auto;
+    height: auto;
+    max-width: 800px;
+}
+
+#videoModalClose {
+    position: absolute;
+    color: #ffffff;
+    text-transform: uppercase;
+    right: 10px;
+    top: -30px;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.as-seen-img {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 20px;
+}
+
+.ti-box {
+    overflow-y: auto;
+}
+
+.ti-box .explore-link {
+    height: 100%;
+}
+
+#headerBanner.faq-page p {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.as-seen-banner .scroll-arrow.left {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.15s;
+}
+
+.as-seen-banner.left-arrow-enabled .scroll-arrow.left {
+    visibility: visible;
+    opacity: 1;
+}
+
+.as-seen-banner>div:before {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.05s;
+}
+
+.as-seen-banner.left-arrow-enabled>div:before {
+    visibility: visible;
+    opacity: 1;
+}
+
+.as-seen-banner .scroll-arrow.left:after,
+.as-seen-banner .scroll-arrow.right:after {
+    position: absolute;
+    top: 38%;
+    background: url('../img-sprite/mobile-media-arrows-2x.png') no-repeat;
+    background-size: 60px 30px;
+    display: inline-block;
+    margin: 0 2px;
+    vertical-align: middle;
+    width: 30px;
+    height: 32px;
+    content: '';
+}
+
+.as-seen-banner .scroll-arrow.left:after {
+    background-position: 0 0;
+    left: 0;
+}
+
+.as-seen-banner .scroll-arrow.right:after {
+    background-position: -30px 0;
+    right: 0;
+}
+
+.ti-sprite.blue-arrow-right,
+.ti-sprite.blue-arrow-left {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.as-seen-banner .scroll-arrow {
+    position: absolute;
+    top: -15px;
+    bottom: -15px;
+    width: 90px;
+    z-index: 2;
+}
+
+.as-seen-banner .scroll-arrow.right {
+    right: 15px;
+}
+
+.as-seen-banner .scroll-arrow.left {
+    left: -4%;
+}
+
+.as-seen-banner.not-home .scroll-arrow.right {
+    right: 15%;
+}
+
+.as-seen-banner.not-home .scroll-arrow.left {
+    left: 15%;
+}
+
+#recentlyViewed .ti-left-slider,
+#gamePage .ti-left-slider,
+#allEventsParent .ti-left-slider {
+    background-image: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.00) 100%);
+}
+
+#recentlyViewed .ti-right-slider,
+#gamePage .ti-right-slider,
+#allEventsParent .ti-right-slider {
+    background: linear-gradient(-90deg, #fff 0%, rgba(255, 255, 255, 0.00) 100%);
+}
+
+.as-seen-banner.not-home .as-seen-images.as-seen-mobile {
+    display: block !important;
+}
+
+.as-seen-banner.not-home .as-seen-images.as-seen-desktop {
+    display: none !important;
+    width: 100%;
+    max-width: 1008px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.ti-page-header .location-box:not(.no-zipcode-parent) .location-information .ti-call-us {
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.ti-page-header .location-box.no-zipcode-parent .location-information .ti-call-us {
+    margin-top: 0;
+}
+
+#gamePage .ti-box-form {
+    margin-top: 10px;
+}
+
+.update-location .close-btn {
+    position: relative;
+    height: 35px;
+    width: 35px;
+    margin-right: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.update-location .close-btn:before {
+    content: '\00D7';
+    font-size: 40px;
+    line-height: 35px;
+    color: #18374c;
+}
+
+@media screen and (min-width: 1008px) {
+    .as-seen-banner.not-home .scroll-arrow {
+        display: none;
+    }
+
+    .as-seen-banner.not-home .as-seen-images.as-seen-mobile {
+        display: none !important;
+    }
+
+    .as-seen-banner.not-home .as-seen-images.as-seen-desktop {
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .as-seen-title .col-xs-3 {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 1575px) {
+    .something-for-everyone .excited-kid {
+        width: 88%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    #recentlyViewed h2 {
+        margin-left: 100px;
+    }
+
+    .as-seen-banner.not-home .scroll-arrow.right {
+        right: 10%;
+    }
+
+    .as-seen-banner.not-home .scroll-arrow.left {
+        left: 10%;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    #franchiseParent #floatingBanner {
+        margin: 0 15px;
+    }
+
+    #recentlyViewed .ti-left-slider,
+    #recentlyViewed .ti-right-slider,
+    #eventPage .ti-left-slider,
+    #eventPage .ti-right-slider,
+    #gamePage .ti-left-slider,
+    #gamePage .ti-right-slider {
+        display: block;
+        top: 0;
+    }
+
+    #tiImageSlider {
+        position: relative;
+    }
+
+    #tiImageSlider .ti-left-slider,
+    #tiImageSlider .ti-right-slider {
+        top: 0;
+        height: 100%;
+    }
+
+    #tiImageSlider .ti-box {
+        box-shadow: none;
+        padding-bottom: 0;
+        max-width: none;
+        width: 640px;
+        height: 427px;
+        margin: 0;
+        float: none;
+        display: inline-block;
+    }
+
+    #tiImageSlider img {
+        width: 640px;
+        height: 427px;
+    }
+
+    #recentlyViewed h2,
+    #allEventsSlider h2 {
+        max-width: 1440px;
+        margin: 0 auto 30px !important;
+        padding: 0 30px 20px;
+    }
+
+    #recentlyViewed h2:after,
+    #allEventsSlider h2:after {
+        left: 30px;
+    }
+
+    #eventPage .ti-slider-parent {
+        max-width: none;
+    }
+
+    #faqContent {
+        padding: 30px 0;
+    }
+
+    #faqContent .limited-width {
+        padding: 0 15px;
+    }
+
+    #faqParent {
+        padding: 0 15px;
+    }
+
+}
+
+@media screen and (max-width: 1400px) {
+    #navLinks a {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 1375px) {
+    .something-for-everyone .excited-kid {
+        width: 100%;
+    }
+
+    #testimonials .star-container {
+        margin-bottom: 20px;
+    }
+
+    .ti-page-header .location-box {
+        right: -60%;
+    }
+
+    #bottomNav {
+        height: 225px;
+    }
+
+    #bottomNav .ti-content {
+        padding-top: 50px;
+    }
+
+    #bottomNav .social-media-links,
+    #bottomNav .page-links .ti-nav-content {
+        vertical-align: top;
+        font-size: 18px;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+
+    #bottomNav .social-media-links {
+        text-align: left;
+    }
+
+    #bottomNav .page-links {
+        font-size: 18px;
+    }
+
+    #g2uExperience {
+        padding: 0 39px 0 40px;
+    }
+
+    #franchiseNav {
+        padding: 0 16px;
+    }
+
+    .ti-underline-element {
+        padding-bottom: 5px;
+    }
+
+    #navigation {
+        margin-bottom: -20px;
+    }
+}
+
+@media screen and (max-width: 1330px) {
+    #planYourParty {
+        overflow: hidden;
+    }
+
+    #planYourParty .excited-woman-parent {
+        bottom: -90px;
+        right: -5%;
+    }
+
+    #planYourParty .limited-width>div {
+        position: relative;
+        z-index: 1;
+    }
+
+    #planYourParty .excited-woman-parent {
+        position: absolute !important;
+        height: 600px;
+        z-index: 0 !important;
+    }
+
+    #videoModal video {
+        max-width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+
+    #recentlyViewed .ti-left-slider,
+    #recentlyViewed .ti-right-slider,
+    #eventPage .ti-left-slider,
+    #eventPage .ti-right-slider,
+    #gamePage .ti-left-slider,
+    #gamePage .ti-right-slider {
+        display: block;
+        top: 0;
+        overflow-y: hidden;
+    }
+
+    #recentlyViewed .ti-box,
+    #eventPage .ti-box,
+    #gamePage .game-content .ti-box {
+        max-width: 375px !important;
+        margin: 0 35px 0 0;
+    }
+
+    #tiImageSlider .ti-left-slider,
+    #tiImageSlider .ti-right-slider {
+        top: 0;
+        height: 100%;
+    }
+
+    #recentlyViewed .ti-slider-parent,
+    #gamePage .ti-slider-parent,
+    #eventPage .ti-slider-parent {
+        max-width: none !important;
+    }
+
+    #gamesWithIcons p {
+        font-size: 18px;
+    }
+
+    #footerContact {
+        padding: 80px 50px;
+    }
+
+    #bottomNav {
+        height: 225px;
+    }
+
+    #bottomNav .ti-content {
+        padding-top: 50px;
+    }
+
+    #bottomNav .social-media-links,
+    #bottomNav .page-links .ti-nav-content {
+        vertical-align: top;
+        font-size: 18px;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+
+    .ti-two-col-space-first {
+        padding-right: 15px;
+    }
+
+    .ti-two-col-space-last {
+        padding-left: 15px;
+    }
+
+    .as-seen-title .col-xs-3 {
+        width: 52%;
+    }
+
+    .as-seen-banner.franchise-banner>div {
+        height: 80px;
+    }
+
+    #bottomFooter {
+        padding: 10px 30px;
+    }
+
+    #franchiseParent #floatingBanner h2 {
+        padding: 0 10px;
+    }
+
+}
+
+@media screen and (max-width: 1150px) {
+    #locationBreak .ti-input .zip-code-input {
+        width: 120px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    #testimonials .testimonial-content p {
+        line-height: 24px;
+    }
+
+    #footerContact {
+        margin-right: 35px;
+    }
+
+    #anyEvent .limited-width>div {
+        font-size: 16px;
+    }
+
+    #alternativeContact {
+        padding: 70px 45px 70px 30px;
+    }
+
+    #navigation {
+        margin-bottom: -20px;
+    }
+}
+
+@media screen and (max-width: 1095px) {
+    #gamesWithIcons {
+        padding-left: 15px;
+    }
+
+    #gamesWithIcons .home-game-name p,
+    #gamesWithIcons .home-game-name a {
+        font-size: 18px;
+    }
+
+    .home-icon {
+        margin-right: 7px;
+    }
+
+    #gamesWithIcons .home-icon a {
+        line-height: 55px;
+    }
+}
+
+@media screen and (max-width: 1045px) {
+    #franchiseParent .franchise-banner-orange h2 {
+        font-size: 22px;
+    }
+}
+
+/*------------Tablet View----------------*/
+@media screen and (max-width: 991px) {
+
+    /* Stylesheet  */
+    .ti-sprite {
+        background: url('../img-sprite/mobile-sprite-2x.png') no-repeat;
+        background-size: 312px 114px;
+    }
+
+    .ti-sprite.darker-location-pin {
+        background-position: -147px -2px;
+        width: 12px;
+        height: 18px;
+    }
+
+    .ti-sprite.location-pin {
+        background-position: -66px -46px;
+        width: 11px;
+        height: 18px;
+    }
+
+    .ti-sprite.blue-location-pin {
+        background-position: -193px -2px;
+        width: 18px;
+        height: 28px;
+    }
+
+    .ti-sprite.yellow-chevron-down {
+        background-position: -125px -2px;
+    }
+
+    .ti-sprite.orange-chevron-up {
+        background-position: -79px -46px;
+    }
+
+    .ti-sprite.orange-chevron-down {
+        background-position: -79px -60px;
+    }
+
+    .ti-sprite.blue-arrow-left {
+        background: url('../img-sprite/sprite-2x-opt.png') no-repeat;
+        background-size: 304px 98px;
+        background-position: -79px -46px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .ti-sprite.blue-arrow-right {
+        background: url('../img-sprite/sprite-2x-opt.png') no-repeat;
+        background-size: 304px 98px;
+        background-position: -131px -46px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .ti-sprite.large-yellow-star {
+        background-position: -189px -92px;
+        width: 21px;
+        height: 20px;
+    }
+
+    .ti-sprite.facebook-icon {
+        background-position: -165px -32px;
+    }
+
+    .ti-sprite.twitter-icon {
+        background-position: -195px -32px;
+    }
+
+    .ti-sprite.youtube-icon {
+        background-position: -227px -32px;
+    }
+
+    .ti-sprite.instagram-icon {
+        background-position: -259px -32px;
+    }
+
+    .ti-sprite.hamburger-icon {
+        background-position: -161px -2px;
+        width: 30px;
+        height: 18px;
+        margin-bottom: 4px;
+    }
+
+    .ti-sprite.hamburger-close {
+        background-position: -239px -2px;
+        width: 22px;
+        height: 22px;
+        margin-right: 13px;
+    }
+
+    .ti-sprite.blue-phone {
+        background-position: -213px -2px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .ti-sprite.orange-phone {
+        background-position: -290px -2px;
+        width: 20px;
+        height: 18px;
+    }
+
+    .ti-sprite.blue-x {
+        background-position: -239px -2px;
+        width: 22px;
+        height: 22px;
+    }
+
+    .ti-sprite.orange-mail {
+        background-position: -263px -2px;
+        width: 25px;
+        height: 18px;
+    }
+
+    .ti-sprite.play-button {
+        background-position: -165px -62px;
+        width: 22px;
+        height: 22px;
+    }
+
+    .container-fluid .row {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .game-content .row {
+        padding: 0;
+    }
+
+    .game-content .row>div+div {
+        margin-top: 20px;
+    }
+
+    .ti-main-logo {
+        position: absolute;
+        top: 18px;
+        width: 100%;
+        display: block;
+    }
+
+    .ti-main-logo img {
+        display: block;
+        margin: 0 auto;
+        width: 242px;
+        height: 76px;
+    }
+
+    .ti-sprite.select-arrows {
+        background: url(../img-sprite/sprite-2x-opt.png) no-repeat;
+        background-size: 304px 98px;
+        background-position: -181px -29px;
+        display: inline-block;
+        margin: 7px 10px;
+        vertical-align: middle;
+    }
+
+    #headerBanner {
+        margin-top: 14px;
+    }
+
+    #headerBanner.not-home.faq-page:before {
+        background: url(../img/faq-banner-tablet-2x.jpg);
+        background-position: 50% 25%;
+    }
+
+    #navLinks {
+        float: left;
+        position: relative;
+        width: 50%;
+    }
+
+    #mobileMenu {
+        height: 30px;
+        font-size: 20px;
+    }
+
+    #mobileMenu:hover,
+    #navLinks .links-container:hover {
+        cursor: pointer;
+    }
+
+    #navLinks .links-container {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 33px;
+        left: -15px;
+        z-index: 9999;
+    }
+
+    #navLinks .links-container,
+    #navLinks .links-container>div {
+        background: #fff;
+        text-align: left;
+    }
+
+    .mobile-menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 999;
+        pointer-events: none;
+    }
+
+    #navLinks .links-container>div {
+        width: 100%;
+        border-top: 1px solid #EAEBF2;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    #navLinks .links-container>div:last-child {
+        border-bottom: 1px solid #EAEBF2;
+    }
+
+    #mobileMenu {
+        display: block;
+        text-align: left;
+    }
+
+    #navLinks .links-container div.sub-menu {
+        display: none;
+    }
+
+    #navLinks a {
+        height: auto;
+        display: block;
+        padding: 0;
+        width: 100%;
+        padding: 15px;
+    }
+
+    #navLinks a:hover {
+        background: #fff;
+        color: #D35E13;
+    }
+
+    .sub-menu .ti-sub-head {
+        display: none;
+    }
+
+    #navLinks .links-container div.sub-menu {
+        padding: 0;
+        display: none !important;
+    }
+
+    #navLinks .links-container div.sub-menu .col-md-4 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #navLinks .links-container div.sub-menu .col-md-4:first-child {
+        padding: 20px 0 0;
+    }
+
+    #navLinks .links-container div.sub-menu .col-md-4:last-child {
+        padding: 0 15px 20px;
+    }
+
+    #navLinks>div>div.col-sm-3.no-padding>a {
+        padding-left: 15px;
+    }
+
+    #navLinks a.active {
+        color: #D35E13;
+        background: #fff;
+    }
+
+    #navLinks .padding-top {
+        padding-top: 15px;
+    }
+
+    #navLinks .links-container>div.mobile-location {
+        font-size: 14px;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    #navLinks .links-container>div.mobile-location a {
+        display: inline-block;
+        width: auto;
+        padding: 0;
+        font-size: 12px;
+    }
+
+    .home-icon {
+        margin-right: 0;
+    }
+
+    #g2uExperience,
+    #franchiseNav {
+        padding: 0;
+    }
+
+    .ti-page-header>.ti-row .limited-width {
+        padding: 30px 0;
+    }
+
+    .ti-box p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .container-fluid .ti-small-banner {
+        padding: 20px 0;
+    }
+
+    #gamesWithIcons .row {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    #gamesWithIcons .col-sm-3,
+    #gamesWithIcons .col-sm-2 {
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    #gamesWithIcons .col-sm-2 img {
+        height: 40px;
+        width: auto;
+    }
+
+    .container-fluid h2 {
+        font-size: 36px;
+    }
+
+    .container-fluid .ti-small-banner h2,
+    #topHomepageBanner h2 {
+        font-size: 22px;
+    }
+
+    #topHomepageBanner {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    #topHomepageBanner h2 {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    #topHomepageBanner h2 br {
+        display: none;
+    }
+
+    #topHomepageBanner h2 strong {
+        font-size: 36px;
+    }
+
+    #topHomepageBanner .row {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    #topHomepageBanner .col-md-3 {
+        min-height: 0;
+    }
+
+    #headerBanner.not-home {
+        height: auto;
+    }
+
+    .container-fluid .ti-page-header.row {
+        height: auto;
+        /* padding: 15px 15px 0; */
+        padding: 15px 0 0;
+    }
+
+    .ti-page-header h1 {
+        font-size: 64px;
+        margin-bottom: 10px;
+    }
+
+    #headerBanner.not-home p {
+        font-size: 20px;
+    }
+
+    #headerBanner.not-home p.small-text {
+        font-size: 14px;
+    }
+
+    #anyEvent .limited-width>.row {
+        margin: 10px 0 0;
+        padding: 0;
+    }
+
+    #anyEvent .limited-width>.row>a {
+        width: 48%;
+    }
+
+    #franchiseContent h2 {
+        padding-right: 0;
+    }
+
+    #franchiseParent .franchise-text {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    #franchiseParent .franchise-banner-orange h2 {
+        font-weight: bold;
+        display: inline-block;
+        width: calc(100% - 300px);
+        vertical-align: middle;
+        text-align: right;
+    }
+
+    #franchiseParent .franchise-banner-orange .ti-yellow-button {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .container-fluid .ti-banner-two-col .col-xs-12 {
+        display: table;
+    }
+
+    .container-fluid .ti-banner-two-col .col-xs-12>* {
+        display: table-cell;
+        vertical-align: middle;
+        margin: 0;
+    }
+
+    .container-fluid .ti-banner-two-col h2 {
+        text-align: right;
+        padding-right: 30px;
+        font-weight: normal;
+    }
+
+    #footerContact {
+        margin-right: 0;
+    }
+
+    #gamesTheyLove h2 {
+        margin-top: 0;
+    }
+
+    #franchiseParent #floatingBanner .banner-row:not(.first) img {
+        margin-right: 0;
+    }
+
+    #franchiseParent #floatingBanner .banner-row.first+.banner-row p {
+        width: auto;
+        max-width: 80%;
+    }
+
+    #franchiseParent .franchise-video {
+        page-break-before: unset;
+    }
+
+    #franchiseParent .franchise-text,
+    #franchiseParent .franchise-text:last-child {
+        margin-top: 0;
+        padding: 20px 0 0 0;
+    }
+
+    #franchiseParent .franchise-text p+p {
+        margin-top: 20px;
+    }
+
+    #franchiseParent .franchise-copy .franchise-text {
+        margin-top: 30px;
+    }
+
+    #franchiseParent .ti-row .row {
+        padding-bottom: 15px;
+    }
+
+    #franchiseParent h2 span {
+        font-size: 22px;
+        line-height: 29px;
+    }
+
+    #franchiseParent #floatingBanner .banner-row:not(.first) p {
+        text-align: center;
+    }
+
+    #franchiseParent #floatingBanner .banner-row {
+        width: 24.5%;
+    }
+
+    #franchiseContent .franchise-text {
+        padding-right: 20px;
+    }
+
+    .ti-sprite.lock-icon {
+        background-position: -2px -70px;
+    }
+
+    .faq-container h2 {
+        font-size: 18px;
+    }
+
+    #alternativeContact {
+        height: auto;
+        padding: 30px;
+    }
+
+    #alternativeContact .ti-bottom {
+        position: relative;
+        bottom: auto;
+        width: 100%;
+    }
+
+    .as-seen-banner.franchise-banner>div {
+        height: 110px;
+    }
+
+    .as-seen-banner.franchise-banner>.as-seen-franchise-title-container {
+        min-width: 204px;
+        height: auto;
+        width: 33.3%;
+    }
+
+    #allGamesContent .ti-box {
+        width: 48%;
+    }
+
+    #headerBanner.not-home.game-page img {
+        max-height: 70px;
+        margin-bottom: 5px;
+    }
+
+    #mapAndContact {
+        height: auto;
+    }
+
+    #mapAndContact #footerContact {
+        margin-top: 200px;
+        padding: 40px 100px;
+        height: auto;
+    }
+
+    #bottomNav .ti-content {
+        padding-top: 0;
+    }
+
+    #bottomNav .row.limited-width {
+        padding-top: 15px;
+    }
+
+    #footerContact h3 {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .container-fluid .as-seen-banner {
+        padding: 0;
+    }
+
+    .as-seen-banner .ti-seven-wide {
+        width: 12.9%;
+    }
+
+    #testimonials {
+        height: 400px;
+    }
+
+    #testimonials .testimonial-content p {
+        font-size: 18px;
+    }
+
+    #testimonials .testimonial-content p.review-name {
+        margin-top: 15px;
+    }
+
+    #testimonials img {
+        display: none;
+    }
+
+    #floatingBanner .ti-break-line,
+    #headerBanner.franchise-page .ti-break-line {
+        display: block;
+        margin-top: 10px;
+    }
+
+    #franchiseParent #floatingBanner .banner-row.first p span.bottom {
+        position: static;
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+    #franchiseParent #floatingBanner .banner-row.first p span.top {
+        display: inline-block;
+    }
+
+    #franchiseParent #floatingBanner .banner-row {
+        height: auto;
+        margin: 0 1% 0 -1%;
+    }
+
+    .ti-seven-wide {
+        width: 18.9%;
+    }
+
+    #franchiseParent #floatingBanner {
+        padding: 10px 0;
+    }
+
+    #headerBanner.not-home.game-page {
+        padding: 0;
+    }
+
+    #headerBanner.not-home-additional {
+        padding: 0;
+    }
+
+    #headerBanner.not-home.all-events-page:before {
+        background-image: url('../img/allevents-banner-tablet-2x.jpg');
+    }
+
+    #headerBanner.not-home.game-page:before {
+        background-image: url('../img/game-banner-tablet-2x.jpg');
+    }
+
+    #headerBanner.not-home.event-page:before {
+        background-image: url('../img/event-banner-tablet-2x.jpg');
+    }
+
+    #headerBanner.not-home.all-games-page:before {
+        background-image: url('../img/allgames-banner-tablet-2x.jpg');
+    }
+
+    #headerBanner.not-home.frabcguse-page:before {
+        background-image: url('../img/franchise-banner-tablet.jpg');
+    }
+
+    #allEventsSlider h2 {
+        margin-left: 30px;
+    }
+
+    .ti-slider-parent .ti-box h3 {
+        padding: 70px 10px 5px;
+    }
+
+    #gamesWithIcons .row>div {
+        height: 70px;
+    }
+
+    #gamesWithIcons .row>div .ti-inline-block {
+        vertical-align: middle;
+    }
+
+    #planYourParty .limited-width>div>.row {
+        padding-bottom: 0;
+    }
+
+    #planYourParty .limited-width>div>.row:last-child {
+        width: 50%;
+    }
+
+    #planYourParty .excited-woman-parent {
+        width: 40%;
+        bottom: -100px;
+    }
+
+    #planYourParty .excited-woman {
+        background-size: contain;
+        background-position: bottom right;
+    }
+
+    #planYourParty p {
+        margin: 0;
+    }
+
+    #eventPage .games h2 p,
+    #gamePage .ti-box-container h2 p {
+        font-size: 22px;
+    }
+
+    #gamePage .ti-box-container .ti-box p {
+        line-height: 35px;
+    }
+
+    #mapAndContact #footerContact {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        top: 0;
+        padding: 30px 30px 0 30px;
+    }
+
+    #navigation {
+        padding: 0;
+        margin: 0;
+        height: 50px;
+        border-bottom: 1px solid #ccc;
+        background: #fff;
+        position: relative;
+        z-index: 9999;
+    }
+
+    span#mobileMenu {
+        position: absolute;
+        left: -15px;
+        width: 130px;
+        top: 0;
+        height: 50px;
+        border-right: 1px solid #ccc;
+        text-align: center;
+    }
+
+    #mobileMenu .ti-sprite.hamburger-close {
+        margin: 14px 4px;
+    }
+
+    #mobileMenu .ti-sprite.hamburger-icon {
+        margin: 16px 0;
+    }
+
+    #mobileMenu .hidden-xs {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 0 0 5px;
+    }
+
+    .ti-main-logo {
+        width: calc(100% - 230px);
+        left: 130px;
+        right: 100px;
+        margin: auto;
+        top: 5px;
+        z-index: 1001;
+    }
+
+    #navLinks #mobilePhoneIcon {
+        position: absolute;
+        right: -15px;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        border-left: 1px solid #ccc;
+        padding: 13px 0 0 0;
+        text-align: center;
+    }
+
+    #navLinks #mobileLocationIcon {
+        position: absolute;
+        right: 35px;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        border-left: 1px solid #ccc;
+        padding: 11px 0 0 0;
+        text-align: center;
+    }
+
+    #navLinks {
+        float: none;
+        width: 100%;
+    }
+
+    #headerBanner {
+        margin-top: 0;
+    }
+
+    #navLinks .links-container {
+        width: auto;
+        left: -15px;
+        right: -15px;
+        height: auto;
+        top: 50px;
+        z-index: 1000;
+    }
+
+    #navLinks .links-container>div.mobile-location {
+        padding-top: 30px;
+    }
+
+    .as-seen-banner .as-seen-images.as-seen-mobile,
+    .ti-page-header .as-seen-banner .as-seen-images {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* all games */
+    #headerBanner.all-games-page select {
+        width: 230px;
+    }
+
+    #headerBanner.not-home .suggested-games p {
+        font-size: 14px;
+    }
+
+    .suggested-games {
+        padding: 0 20px;
+        margin-bottom: -15px;
+    }
+
+    .suggested-games>.row {
+        padding: 0;
+    }
+
+    /* maps */
+    #map {
+        height: 160px;
+    }
+
+    #mapAndContact {
+        height: auto;
+    }
+
+    #mapAndContact #footerContact {
+        position: static;
+        margin: 0;
+        padding: 30px;
+    }
+
+    /* no zip */
+    .no-zipcode #footerContact .ti-yellow-button,
+    #mapAndContact.no-zipcode .ti-input input {
+        width: 75%;
+        margin: 0 auto;
+        display: inline-block;
+        float: none !important;
+    }
+
+    /* changed from 
+    	width 100 to 80
+    	block to inline-block */
+
+    .no-zipcode #footerContact .ti-yellow-button {
+        width: 18%;
+        vertical-align: top !important;
+    }
+
+    /* removed - margin-top: 10px;
+    	added width and v-align */
+
+    #mapAndContact.no-zipcode #footerContact {
+        margin: 0 auto;
+        left: auto;
+        width: 100%;
+    }
+
+    #mapAndContact.no-zipcode .ti-input {
+        text-align: center;
+        max-width: 300px;
+        margin: 0 auto;
+        float: none;
+    }
+
+    #mapAndContact.no-zipcode {
+        min-height: 0;
+        padding-top: 250px;
+        background-size: 1179px;
+    }
+
+    /* validation */
+    .ti-sprite.checkmark {
+        background-position: -11px -70px;
+        height: 15px;
+        width: 18px;
+    }
+
+    #ourGamesNav .ti-blue-background {
+        color: #fff;
+    }
+
+    #ourGamesNav .ti-blue-background:hover {
+        background: #146DA8;
+        color: #fff;
+    }
+
+    #tiImageSlider img,
+    #tiImageSlider .ti-box,
+    #tiImageSlider .ti-slider-parent {
+        height: 280px;
+        width: auto;
+    }
+
+    #videoModal {
+        max-width: 95%;
+        min-width: 95%;
+    }
+
+    #recentlyViewed .ti-left-slider,
+    #gamePage .ti-left-slider,
+    #allEventsParent .ti-left-slider {
+        background-image: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.00) 100%);
+    }
+
+    #recentlyViewed .ti-right-slider,
+    #gamePage .ti-right-slider,
+    #allEventsParent .ti-right-slider {
+        background: linear-gradient(-90deg, #fff 0%, rgba(255, 255, 255, 0.00) 100%);
+    }
+
+    #recentlyViewed {
+        padding: 40px 0;
+    }
+
+    .as-seen-truck img {
+        width: auto;
+        height: auto;
+        margin-left: -10px;
+    }
+
+    .as-seen-truck {
+        top: auto;
+        bottom: 0;
+    }
+
+    .as-seen-sprinter img {
+        width: auto;
+        height: auto;
+        left: auto;
+        margin-left: -10px;
+    }
+
+    .as-seen-sprinter {
+        top: auto;
+        bottom: 0;
+    }
+
+    #headerBanner .as-seen-banner>div:before,
+    #headerBanner .as-seen-banner>div:after {
+        top: 0;
+        bottom: 0;
+    }
+
+    .as-seen-title span {
+        top: -50px;
+        margin-left: 70px;
+        width: 280px;
+    }
+
+    .as-seen-banner.not-home .as-seen-images {
+        width: 100%;
+    }
+
+    .as-seen-banner.not-home .scroll-arrow.left {
+        left: 15px;
+    }
+
+    .as-seen-banner.not-home .scroll-arrow.right {
+        right: 15px;
+    }
+
+    .as-seen-banner .as-seen-images {
+        padding-left: 0;
+        overflow-y: scroll;
+        overflow-x: auto;
+    }
+
+    .ti-page-header video {
+        width: auto;
+        height: 100%;
+    }
+
+    .ti-page-header h1 {
+        font-size: 44px;
+        line-height: 1;
+    }
+
+    .ti-page-header .location-holder {
+        text-align: center;
+    }
+
+    .ti-page-header .location-box {
+        position: static;
+        width: 50%;
+        display: block;
+        margin: 45px auto 100px;
+        opacity: 0.95;
+    }
+
+    .ti-page-header .location-box a.ti-orange-text {
+        text-align: left;
+        font-size: 16px;
+    }
+
+    .ti-page-header .location-holder-place {
+        text-align: left;
+    }
+
+    .ti-page-header .location-information {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .ti-page-header .location-information h3 {
+        font-size: 18px;
+    }
+
+    .ti-page-header .location-information p.ti-orange-text {
+        font-size: 16px;
+    }
+
+    .ti-page-header .location-information .ti-yellow-button {
+        width: 290px;
+    }
+
+    .ti-page-header .location-holder h3 {
+        font-size: 20px;
+    }
+
+    #footer .social-media-links {
+        text-align: center;
+    }
+
+    #gamesWithIcons .home-game-name p,
+    #gamesWithIcons .home-game-name a {
+        font-size: 22px;
+    }
+
+    /* #tiImageSlider {
+        height: 280px;
+    } */
+
+    /* footer */
+    #bottomNav .page-link-columns {
+        float: left;
+        width: 50%;
+    }
+
+    #bottomNav .ti-nav-content {
+        display: block;
+
+    }
+
+    .as-seen-banner .as-seen-images {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/*---------------Mobile View--------------------*/
+@media screen and (max-width: 767px) {
+
+    .ti-input,
+    .ti-textarea,
+    .ti-input label,
+    .ti-textarea label {
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    .ti-input label.has-content {
+        font-weight: bold;
+    }
+
+    .ti-sprite.blue-arrow-left {
+        background: url('../img-sprite/mobile-sprite-2x.png') no-repeat;
+        background-size: 312px 108px;
+        background-position: -123px -60px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .ti-sprite.blue-arrow-right {
+        background: url('../img-sprite/mobile-sprite-2x.png') no-repeat;
+        background-size: 312px 108px;
+        background-position: -123px -20px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .as-seen-banner .scroll-arrow.left:after,
+    .as-seen-banner .scroll-arrow.right:after {
+        position: absolute;
+        top: 38%;
+        background: url('../img-sprite/mobile-media-arrows-2x.png') no-repeat;
+        background-size: 60px 30px;
+        display: inline-block;
+        margin: 0 2px;
+        vertical-align: middle;
+        width: 30px;
+        height: 32px;
+        content: '';
+    }
+
+    .as-seen-banner .scroll-arrow.left:after {
+        background-position: 0 0;
+        left: 0;
+    }
+
+    .as-seen-banner .scroll-arrow.right:after {
+        background-position: -30px 0;
+        right: 0;
+    }
+
+    #headerBanner .as-seen-banner .scroll-arrow.left:after {
+        left: 0;
+    }
+
+    #headerBanner .as-seen-banner .scroll-arrow.right:after {
+        right: 0;
+    }
+
+    #navigation .col-md-7 {
+        padding: 0;
+    }
+
+    #navLinks .links-container>div {
+        display: block;
+    }
+
+    #navLinks {
+        width: 100%;
+    }
+
+    #topHomepageBanner .ti-break-line {
+        display: inline-block;
+    }
+
+    #headerBanner .row {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .container-fluid h2 {
+        font-size: 30px;
+    }
+
+    .container-fluid .ti-banner-two-col .col-xs-12 {
+        display: block;
+    }
+
+    .container-fluid .ti-banner-two-col .col-xs-12>* {
+        display: inline-block;
+    }
+
+    .container-fluid .ti-banner-two-col h2 {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .container-fluid .ti-small-banner.ti-banner-two-col .ti-yellow-button {
+        margin: 20px 0 0;
+    }
+
+    .container-fluid .ti-small-banner .ti-yellow-button {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .ti-slider-parent {
+        height: auto;
+        margin-bottom: 30px;
+        padding-bottom: 6px;
+    }
+
+    #eventPage .ti-slider-parent,
+    #allEventsSlider .ti-slider-parent {
+        margin-bottom: 0;
+    }
+
+    .ti-left-slider,
+    .ti-right-slider {
+        width: 85px;
+    }
+
+    #recentlyViewed .ti-box,
+    #eventPage .ti-box,
+    #allEventsSlider .ti-box,
+    #gamesTheyLove .ti-box {
+        max-width: 230px !important;
+        margin: 0 15px 5px 0;
+        font-weight: normal;
+    }
+
+    #tiImageSlider .ti-box {
+        max-width: none !important;
+    }
+
+    .ti-box-row {
+        display: block;
+    }
+
+    #franchiseParent .ti-row .ti-box-row {
+        padding: 0 0 15px;
+    }
+
+    #franchiseParent .ti-row .ti-box-row:before,
+    #franchiseParent .ti-row .ti-box-row:after {
+        display: none;
+    }
+
+    .ti-box {
+        width: 100% !important;
+        display: block;
+        margin: 0 auto 15px;
+    }
+
+    .ti-box h3 {
+        font-size: 18px;
+    }
+
+    .ti-box a {
+        font-size: 14px;
+    }
+
+    .ti-box .circle-img {
+        top: auto;
+        width: 60px;
+        height: 60px;
+        border-radius: 60px;
+        line-height: 56px;
+        margin-top: -30px;
+    }
+
+    .ti-box .circle-img img {
+        width: auto;
+        height: auto;
+        max-width: 40px;
+        max-height: 40px;
+        margin: 10px auto;
+    }
+
+    .ti-box-spacer {
+        display: none;
+    }
+
+    .ti-slider-parent .ti-box h3 {
+        padding: 40px 10px 5px;
+    }
+
+    .container-fluid .box-heading {
+        height: 181px;
+    }
+
+    .container-fluid .ti-small-banner {
+        padding: 30px 0;
+    }
+
+    #splashPage .splash-box {
+        padding: 70px 10px 20px;
+        top: 10px;
+    }
+
+    #splashPage img {
+        width: 320px;
+        left: -20px;
+        margin-bottom: -60px;
+    }
+
+    #splashPage h1 {
+        font-size: 30px;
+    }
+
+    #splashPage .splash-box p {
+        margin-bottom: 30px;
+        font-size: 18px;
+    }
+
+    #splashPage .splash-box .ti-input,
+    #splashPage .splash-box a.ti-yellow-button {
+        display: block;
+    }
+
+    #splashPage .splash-box .ti-input {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #splashPage .splash-box a.ti-yellow-button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #splashPage .continue-to-site {
+        top: 100px;
+    }
+
+    #splashPage.no-zip .splash-box {
+        padding-bottom: 20px;
+    }
+
+    .ti-page-header h1 {
+        font-size: 44px;
+        line-height: 1;
+    }
+
+    .ti-page-header .location-holder {
+        text-align: center;
+        padding: 25px 15px;
+    }
+
+    .location-box .ti-input .zip-code-input {
+        width: 175px;
+    }
+
+    .location-box .update-location .ti-yellow-button {
+        float: none;
+    }
+
+    .ti-page-header .location-box a.ti-orange-text {
+        text-align: left;
+        font-size: 16px;
+    }
+
+    .ti-page-header .location-holder-place {
+        text-align: left;
+    }
+
+    .ti-page-header .location-information {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .ti-page-header .location-information h3 {
+        font-size: 18px;
+    }
+
+    .ti-page-header .location-information p.ti-orange-text {
+        font-size: 16px;
+    }
+
+    .ti-page-header .location-information .ti-yellow-button {
+        width: 100%;
+    }
+
+    .ti-page-header .location-holder h3 {
+        font-size: 20px;
+    }
+
+    #headerBanner.not-home p {
+        font-size: 18px;
+    }
+
+    #headerBanner.not-home p.small-text {
+        font-size: 14px;
+    }
+
+    .ti-page-header .view-game-selection {
+        position: relative;
+        display: block;
+        margin: 15px auto 0;
+        width: 100%;
+        max-width: 285px;
+        height: 40px;
+        line-height: 40px;
+        color: #fff;
+        background: rgba(236, 118, 36, 0.90);
+        border-radius: 41px;
+        text-align: center;
+        z-index: 999;
+        cursor: pointer;
+        left: 0;
+        right: 0;
+    }
+
+    #somethingForEveryone {
+        margin-bottom: 40px;
+        padding-top: 30px;
+        height: 450px;
+    }
+
+    #somethingForEveryone>div {
+        padding: 0;
+    }
+
+    #somethingForEveryone h2 {
+        font-size: 30px;
+        padding-top: 15px;
+    }
+
+    #somethingForEveryone p {
+        padding-top: 15px;
+        font-size: 26px;
+    }
+
+    #somethingForEveryone h2:after {
+        width: 100px;
+    }
+
+    #somethingForEveryone p {
+        font-weight: normal;
+    }
+
+    #somethingForEveryone:before {
+        background: url(../img/excited-kid-mobile-2x.png) no-repeat;
+        background-size: contain;
+        width: 400px;
+        height: 800px;
+        position: absolute;
+        right: -240px;
+        bottom: -285px;
+        -ms-transform: rotate(-12deg);
+        -webkit-transform: rotate(-12deg);
+        transform: rotate(-12deg);
+    }
+
+    .something-for-everyone .excited-kid-parent {
+        height: 700px;
+        display: none;
+    }
+
+    .something-for-everyone .excited-kid {
+        /* background: url(../img/excited-kid-mobile-2x.png) no-repeat; */
+        background-size: contain;
+        height: 440px;
+        right: -92px;
+        top: 197px;
+    }
+
+    .something-for-everyone>div.col-xs-12:after {
+        height: 132px;
+    }
+
+    #somethingForEveryone .ti-yellow-button {
+        width: 290px;
+        display: block;
+    }
+
+    #gamesTheyLove .row.ti-row.no-side-padding.no-side-margin.remove-overflow {
+        padding-bottom: 0;
+    }
+
+    #gamesWithIcons .col-xs-1,
+    #gamesWithIcons .col-xs-11 {
+        float: none;
+        display: inline-block;
+        margin: 0 5px;
+    }
+
+    #gamesWithIcons .col-xs-11 {
+        width: 85%;
+    }
+
+    #gamesWithIcons a {
+        line-height: 30px;
+    }
+
+    #planYourParty .col-sm-2 {
+        text-align: left;
+        margin-bottom: 30px;
+    }
+
+    #planYourParty p {
+        margin-bottom: 0;
+    }
+
+    #planYourParty,
+    #planYourParty .col-xs-12 {
+        padding-right: 15px;
+    }
+
+    #planYourParty .col-sm-6 .row {
+        padding-bottom: 0;
+    }
+
+    #planYourParty .excited-woman-parent {
+        height: 200px;
+    }
+
+    #planYourParty .excited-woman {
+        background-size: 281px 303px;
+        height: 300px;
+        bottom: 5px;
+        right: -50%;
+    }
+
+    #franchiseParent #floatingBanner {
+        margin: 0 10px;
+        padding: 15px 0;
+    }
+
+    #franchiseParent #floatingBanner,
+    #franchiseParent #floatingBanner .banner-row {
+        display: block;
+    }
+
+    #franchiseParent #floatingBanner .banner-row {
+        width: 100% !important;
+        max-width: none;
+        margin: 0 auto;
+        text-align: left;
+        border-right: none;
+        height: 30px;
+        padding: 0 10px;
+        margin-bottom: 10px;
+    }
+
+    #franchiseParent #floatingBanner .banner-row {
+        height: auto;
+        text-align: left;
+        max-width: none;
+        width: 100%;
+        min-width: auto;
+        padding: 0 10px;
+        margin-bottom: 15px;
+    }
+
+    #franchiseParent #floatingBanner .banner-row.first p:first-child,
+    #franchiseParent #floatingBanner .banner-row.first p:last-child {
+        display: inline-block;
+        width: auto;
+        text-align: left;
+        float: none;
+        font-size: 16px;
+        top: 0;
+    }
+
+    #franchiseParent #floatingBanner .banner-row.first .banner-in {
+        top: 0;
+        margin: 0 3px;
+        font-size: 16px;
+    }
+
+    #franchiseParent #floatingBanner .banner-row.first p span.ti-orange-text {
+        font-size: 20px;
+    }
+
+    #franchiseParent #floatingBanner .banner-row.first p span.bottom {
+        margin-left: 5px;
+    }
+
+    #franchiseParent #floatingBanner .banner-row.first img {
+        top: 0;
+        margin: 0;
+        width: 25px;
+    }
+
+    #franchiseParent #floatingBanner .banner-row:not(.first) p,
+    #franchiseParent #floatingBanner .banner-row.first+.banner-row p {
+        width: auto;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    #franchiseParent #floatingBanner .banner-row:not(.first) img {
+        margin: 0 10px 0 0;
+        width: 21px;
+    }
+
+    #floatingBanner .ti-break-line {
+        display: inline-block;
+    }
+
+    #franchiseParent #floatingBanner .banner-row.first p,
+    #franchiseParent #floatingBanner .banner-row.first p span {
+        position: static;
+    }
+
+    #headerBanner.franchise-page select {
+        width: 95%;
+        display: block;
+        margin: 15px auto 0;
+        height: 45px;
+    }
+
+    #headerBanner.franchise-page .ti-input .ti-sprite {
+        top: 0;
+        right: 26px;
+    }
+
+    #franchiseParent .ti-box {
+        width: 100%;
+        margin: 0 0 15px;
+    }
+
+    #franchiseParent .franchise-copy .franchise-text {
+        margin-top: 15px;
+    }
+
+    #franchiseParent .franchise-video {
+        margin-top: 20px;
+    }
+
+    #franchiseParent .ti-row .row {
+        padding-bottom: 15px;
+    }
+
+    #franchiseParent h2 span {
+        font-size: 18px;
+    }
+
+    #franchiseParent #franchiseContent .franchise-text {
+        padding: 20px 0;
+    }
+
+    #headerBanner.franchise-page .text-center {
+        display: none;
+    }
+
+    #franchiseParent .franchise-banner-orange h2 {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    #franchiseParent .franchise-banner-orange .ti-yellow-button {
+        display: block;
+        margin: 15px auto 0;
+    }
+
+    #alternativeContact {
+        height: auto;
+        padding: 30px 15px 0;
+    }
+
+    #alternativeContact h2 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    #alternativeContact .ti-bottom {
+        position: static;
+        bottom: auto;
+        width: 100%;
+    }
+
+    .as-seen-banner.franchise-banner>.as-seen-franchise-title-container {
+        width: 100%;
+        padding-left: 0;
+        max-width: 400px;
+    }
+
+    #allGamesContent .row {
+        padding: 0 15px 30px;
+    }
+
+    #allGamesContent .ti-box {
+        width: 100%;
+        margin: 1% 0;
+        -ms-transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+    #allGamesContent .ti-box:hover {
+        background: #fff3ea;
+    }
+
+    .faq-container {
+        margin-bottom: 10px;
+        padding: 15px;
+    }
+
+    .faq-container:after {
+        top: 18px;
+        right: 10px;
+    }
+
+    #mapAndContact #footerContact {
+        padding: 30px 12px !important;
+    }
+
+    #topHomepageBanner .col-md-3 {
+        border-right: none;
+        text-align: left;
+    }
+
+    #topHomepageBanner .col-md-3 div,
+    #topHomepageBanner .col-md-3 p {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #topHomepageBanner .col-md-3 p {
+        width: 50%;
+    }
+
+    #topHomepageBanner .col-md-3 div {
+        margin-right: 10px;
+    }
+
+    .ti-page-header .suggested-games .ti-box {
+        width: 100%;
+        margin: 0 auto 15px;
+    }
+
+    #allGamesContent .box-heading {
+        display: inline-block;
+        width: 20%;
+        vertical-align: middle;
+        visibility: hidden;
+    }
+
+    #allGamesContent .ti-box {
+        padding-bottom: 0;
+    }
+
+    #allGamesContent .ti-box p,
+    #allGamesContent .ti-box .explore-link {
+        display: none;
+    }
+
+    #allGamesContent .ti-box h3 {
+        padding: 0;
+        vertical-align: middle;
+        display: inline-block;
+        margin-left: 35px;
+        width: 60%;
+        text-align: left;
+    }
+
+    #allGamesContent a {
+        display: inline;
+    }
+
+    #allGamesContent .ti-box .circle-img {
+        top: 50%;
+        margin-top: 0;
+        right: 60%;
+        left: -25px;
+        -webkit-tranform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    #headerBanner.all-games-page .ti-input .ti-sprite {
+        right: 35px;
+    }
+
+    #headerBanner.all-games-page .ti-inline-block {
+        display: block !important;
+    }
+
+    #headerBanner.all-games-page select,
+    #headerBanner.all-games-page .ti-yellow-button {
+        width: 95%;
+    }
+
+    #allEventsPage .ti-slider-parent {
+        height: 300px;
+    }
+
+    #allEventsSlider h2 {
+        margin: 0 0 25px 30px;
+    }
+
+    #franchiseParent #floatingBanner .banner-row,
+    #franchiseParent #floatingBanner .banner-row:first-child,
+    #franchiseParent #floatingBanner .banner-row:last-child {
+        width: 50% !important;
+        display: block;
+        margin: 0 auto;
+    }
+
+    #gamePage .ti-box-row .ti-box {
+        margin: 0 0 15px;
+    }
+
+    #footerContact {
+        height: auto;
+        padding: 50px 15px 35px;
+    }
+
+    #footerContact h3 {
+        width: 100%;
+    }
+
+    #footerContact .ti-yellow-button {
+        float: none !important;
+        margin: 0 auto;
+        display: block;
+        clear: both;
+        width: 100%;
+    }
+
+    #bottomNav {
+        height: auto;
+        padding: 20px 15px;
+    }
+
+    /* footer */
+    #bottomNav .page-link-columns {
+        float: none;
+        display: block;
+        width: 100%;
+    }
+
+    #bottomNav .row.limited-width,
+    #bottomNav .ti-content {
+        padding: 0;
+    }
+
+    #bottomNav .page-links {
+        margin-bottom: 5px;
+    }
+
+    #bottomNav .social-media-links,
+    #bottomNav .page-links .ti-nav-content {
+        float: none;
+        text-align: center;
+    }
+
+    #bottomNav .page-links .ti-nav-content {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    #bottomNav .page-links .ti-nav-content a {
+        font-size: 16px;
+    }
+
+    #bottomNav .social-media-links {
+        margin-bottom: 0;
+    }
+
+    #bottomFooter {
+        padding: 10px 15px;
+        text-align: center;
+    }
+
+    #bottomFooter .pull-left,
+    #bottomFooter .pull-right {
+        float: none !important;
+    }
+
+    #bottomFooter .bottomFooterNav a {
+        margin-right: 10px;
+        padding-right: 10px;
+        border-right: 1px solid #fff;
+    }
+
+    #bottomFooter .bottomFooterNav a:last-child {
+        border-right: none;
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    #bottomFooter .bottomFooterCopyright {
+        margin-top: 5px;
+    }
+
+    .faq-container h2 {
+        font-size: 16px;
+        padding-right: 20px;
+    }
+
+    #anyEvent .limited-width>div {
+        overflow: hidden;
+        height: auto;
+        margin: 15px auto;
+        width: 100%;
+        /* max-width: 400px; */
+    }
+
+    #anyEvent .limited-width>div>div {
+        transform: none !important;
+        line-height: 75px !important;
+    }
+
+    #anyEvent .limited-width .col-md-4>div:first-child {
+        line-height: 75px;
+    }
+
+    #anyEvent .limited-width .col-md-4>div:first-child {
+        min-width: 40px;
+    }
+
+    #anyEvent .limited-width div img {
+        max-width: 40px;
+        max-height: 40px;
+    }
+
+    #anyEvent .limited-width>.row>a {
+        width: 48%;
+        float: left;
+        font-size: 16px;
+        height: 75px;
+        margin: 5px;
+    }
+
+    #testimonials {
+        height: auto;
+    }
+
+    #testimonials .img-container {
+        width: 100%;
+        height: 300px;
+    }
+
+    #testimonials .img-container:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        background: url(../img/green-swoosh-mobile.png) no-repeat;
+        background-size: 100%;
+        background-position: bottom center;
+    }
+
+    #testimonials .testimonial-content {
+        width: 100%;
+        padding: 0 15px 30px;
+    }
+
+    #testimonials.alternative-footer p.testimonial-quote,
+    #testimonials.alternative-footer p.review-name,
+    #testimonials.alternative-footer p.review-location {
+        font-size: 20px;
+    }
+
+    .container-fluid .ti-small-banner h2 {
+        display: block;
+    }
+
+    #gamePage .ti-box-container .ti-box {
+        width: 100%;
+        max-width: none;
+        position: relative;
+        text-align: left;
+        height: auto;
+        padding: 15px;
+        overflow: hidden;
+        align-items: center;
+    }
+
+    #gamePage .ti-box-container .ti-box img {
+        width: 20%;
+        max-width: 80px;
+        height: auto;
+        margin: 0 30px 0 0;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #gamePage .ti-box-container .ti-box div {
+        width: calc(80% - 35px);
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #gamePage .ti-box-container .ti-box h3 {
+        text-align: left;
+        padding: 0;
+    }
+
+    #gamePage .ti-box-container .ti-box p {
+        text-align: left;
+        padding: 0;
+        margin: 0;
+    }
+
+    .as-seen-banner.franchise-banner>div {
+        height: 90px;
+    }
+
+    #planYourParty {
+        padding: 0;
+    }
+
+    #planYourParty .limited-width>div {
+        padding: 0;
+    }
+
+    #planYourParty .limited-width>div>.row:last-child {
+        width: 100%;
+    }
+
+    #planYourParty .excited-woman-parent {
+        width: 100%;
+        bottom: -120px;
+        right: 0;
+        position: relative !important;
+    }
+
+    #planYourParty .excited-woman {
+        background-size: contain;
+        background-position: bottom center;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        height: 400px;
+    }
+
+    #planYourParty .col-sm-2 {
+        max-width: none;
+    }
+
+    #topHomepageBanner h2 br {
+        display: initial;
+    }
+
+    #topHomepageBanner p {
+        font-weight: normal;
+    }
+
+    #gamesWithIcons img {
+        max-width: 25px;
+        max-height: 25px;
+        width: auto;
+    }
+
+    #gamesWithIcons .home-icon {
+        margin-left: 15px;
+        width: auto;
+    }
+
+    #gamesWithIcons .row>div {
+        height: auto;
+    }
+
+    .ti-sprite.facebook-icon {
+        height: 30px;
+    }
+
+    .ti-sprite.twitter-icon {
+        height: 28px;
+    }
+
+    .ti-sprite.youtube-icon {
+        height: 38px;
+    }
+
+    .ti-sprite.instagram-icon {
+        height: 32px;
+    }
+
+    #mobile-bottom-nav.show-mobile {
+        display: table;
+        position: fixed;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: #fff;
+        width: 100%;
+        padding: 0;
+        table-layout: fixed;
+        font-weight: normal;
+        z-index: 9999999999999;
+        transition: all 0.5s;
+    }
+
+    #mobile-bottom-nav.show-mobile {
+        bottom: 0;
+    }
+
+    #mobile-bottom-nav>div {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 11px;
+        border: 1px solid #EBEBEB;
+        padding: 0;
+        border-left: none;
+    }
+
+    #mobile-bottom-nav>div:first-child {
+        border-left: 1px solid #EBEBEB;
+    }
+
+    #mobile-bottom-nav>div a {
+        display: block;
+    }
+
+    #mobile-bottom-nav>div:first-child a {
+        color: #CD5314;
+    }
+
+    #mobile-bottom-nav .ti-sprite {
+        display: block;
+        margin: 0 auto 5px;
+    }
+
+    #mobile-bottom-nav .mobile-underline {
+        color: #CD5314;
+        text-decoration: underline;
+    }
+
+    #mobile-bottom-nav .location-update-wrap .update-location {
+        position: absolute;
+        top: 1px;
+        bottom: 1px;
+        left: 1px;
+        right: 1px;
+        padding: 12px 15px;
+        background: #fff;
+    }
+
+    #mobile-bottom-nav .update-location .ti-yellow-button {
+        display: inline-block;
+        width: auto;
+        height: 33px;
+        line-height: 33px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        background: #F3EA2B;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
+        vertical-align: top;
+        text-transform: uppercase;
+        padding: 0 10px;
+    }
+
+    #mobile-bottom-nav .update-location form {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #splashPage .continue-to-site {
+        margin: 10px auto 0;
+        top: 0;
+        width: 100%;
+    }
+
+    #franchiseParent #franchiseContent {
+        margin-top: -145px;
+    }
+
+    #franchiseParent .ti-box-row .ti-box {
+        width: 100%;
+        max-width: none;
+        position: relative;
+        text-align: left;
+        height: auto;
+        padding: 15px;
+        overflow: hidden;
+        display: block;
+    }
+
+    #franchiseParent .ti-box-row .ti-box img {
+        width: 20%;
+        max-width: 80px;
+        height: auto;
+        margin: 0 30px 0 0;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #franchiseParent .ti-box-row .ti-box div {
+        display: inline-block;
+        vertical-align: middle;
+        width: calc(80% - 35px);
+    }
+
+    #franchiseParent .ti-box-row .ti-box h3 {
+        text-align: left;
+        padding: 0;
+    }
+
+    #franchiseParent .ti-box-row .ti-box p {
+        text-align: left;
+        padding: 0;
+        margin: 0;
+    }
+
+    .location-box .ti-input .zip-code-input {
+        width: 165px;
+    }
+
+    #notificationBanner {
+        position: relative;
+        z-index: 9999;
+    }
+
+    #notificationBanner p {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    span#mobileMenu {
+        width: 50px;
+    }
+
+    .ti-main-logo {
+        width: calc(100% - 100px);
+        left: 50px;
+        right: 50px;
+    }
+
+    .ti-main-logo img {
+        height: auto;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    /* as seen in */
+    .as-seen-banner.mobile-wrap {
+        overflow-y: hidden;
+        overflow-x: auto;
+        white-space: nowrap;
+        position: relative;
+    }
+
+    .as-seen-banner.mobile-wrap .ti-seven-wide {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 10px;
+        height: auto;
+        width: auto;
+    }
+
+    .as-seen-banner.mobile-wrap .space-helper {
+        display: none;
+    }
+
+    /* all games */
+    #headerBanner.not-home .suggested-games h3 {
+        padding-top: 20px;
+    }
+
+    #headerBanner.not-home .suggested-games .ti-view-all-row {
+        margin-left: -80px;
+        margin-right: -80px;
+    }
+
+    #headerBanner.not-home .suggested-games .ti-box {
+        float: none;
+    }
+
+    .suggested-games {
+        margin-bottom: 0;
+    }
+
+    .suggested-games .continue-to-site.view-all-games {
+        margin-top: 15px;
+    }
+
+    .suggested-games .ti-box .circle-img {
+        position: relative;
+    }
+
+    #recentlyViewed .ti-left-slider,
+    #gamePage .ti-left-slider,
+    #allEventsParent .ti-left-slider {
+        background-image: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.00) 100%);
+    }
+
+    #recentlyViewed .ti-right-slider,
+    #gamePage .ti-right-slider,
+    #allEventsParent .ti-right-slider {
+        background: linear-gradient(-90deg, #fff 0%, rgba(255, 255, 255, 0.00) 100%);
+    }
+
+    #tiImageSlider .ti-right-slider,
+    #tiImageSlider .ti-left-slider {
+        top: 0;
+    }
+
+    #headerBanner.not-home.game-page p,
+    #headerBanner.not-home.event-page p {
+        width: 90%;
+    }
+
+    .home-game-name {
+        max-width: 85%;
+    }
+
+    #gamesWithIcons .home-game-name p,
+    #gamesWithIcons .home-game-name a {
+        font-size: 20px;
+    }
+
+    #allGamesContent {
+        padding-bottom: 0px;
+    }
+
+    #gamePage .ti-box-row {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    #headerBanner.all-events-page p {
+        padding: 0 15px;
+    }
+
+    #franchiseParent .limited-width>.col-xs-12,
+    .as-seen-banner>.col-xs-12 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .container-fluid .content-padding {
+        padding: 50px 15px;
+    }
+
+    .as-seen-banner img {
+        width: 75px !important;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .as-seen-truck img {
+        width: 388px !important;
+        margin-left: auto;
+        position: relative;
+        left: -10px;
+    }
+
+    .as-seen-sprinter img {
+        width: 388px !important;
+        margin-left: auto;
+    }
+
+    #videoModal {
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .as-seen-img {
+        padding: 0 10px;
+    }
+
+    #gamesWithIcons .home-game-name p,
+    #gamesWithIcons .home-game-name a {
+        margin-left: 10px;
+    }
+
+    #recentlyViewed {
+        padding: 30px 0;
+    }
+
+    .as-seen-title,
+    .as-seen-banner .as-seen-images {
+        width: 100%;
+    }
+
+    .as-seen-title span {
+        margin-left: 0;
+        left: 0;
+        width: 270px;
+        font-size: 18px;
+        margin-left: -35px;
+    }
+
+    .container-fluid .ti-page-header .as-seen-banner {
+        padding: 0;
+    }
+
+    .as-seen-title {
+        margin-left: -15px;
+        height: auto;
+    }
+
+    .as-seen-truck {
+        width: 140px;
+        top: -90px;
+        left: 10px;
+    }
+
+    .as-seen-sprinter {
+        width: 140px;
+        top: -90px;
+        left: 10px;
+    }
+
+    #headerBanner .as-seen-banner>div:before,
+    #headerBanner .as-seen-banner>div:after {
+        width: 30px;
+    }
+
+    #headerBanner .as-seen-banner>div:before {
+        left: 0px;
+    }
+
+    #videoModal video {
+        width: 100%;
+    }
+
+    #gamesWithIcons {
+        padding-top: 0;
+    }
+
+    .ti-page-header .location-box {
+        width: 90%;
+    }
+
+    #splashPage .splash-wrapper {
+        max-width: 85%;
+        margin: 0 auto;
+    }
+
+    #splashPage .splash-box {
+        padding: 50px 10px 20px;
+    }
+
+    #splashPage .splash-box p {
+        margin-bottom: 12px;
+    }
+
+    #testimonials .testimonial-content {
+        min-height: 360px;
+    }
+
+    #testimonials .testimonial-content .testimonial-cell {
+        top: 48%;
+    }
+}
+
+@media screen and (max-width: 565px) {
+
+    #franchiseParent #floatingBanner .banner-row,
+    #franchiseParent #floatingBanner .banner-row:first-child,
+    #franchiseParent #floatingBanner .banner-row:last-child {
+        width: 90% !important;
+        padding: 0;
+    }
+
+    #splashPage .splash-wrapper {
+        top: 5%;
+    }
+
+    #splashPage.no-zip .splash-wrapper {
+        top: 15px;
+    }
+
+    #topHomepageBanner .col-md-3 p {
+        width: 70%;
+    }
+
+    #splashPage {
+        height: 800px;
+        overflow: visible;
+    }
+
+    .ti-left-slider,
+    .ti-right-slider {
+        width: 75px;
+    }
+
+    #somethingForEveryone {
+        height: 500px;
+    }
+
+}
+
+@media screen and (max-width: 544px) {
+    #anyEvent .limited-width>.row>a {
+        width: 100%;
+        float: left;
+        margin: 5px 0;
+    }
+
+    #somethingForEveryone {
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #somethingForEveryone {
+        height: 600px;
+    }
+
+    #somethingForEveryone .col-xs-12:last-child {
+        z-index: 2;
+    }
+
+    #somethingForEveryone .ti-yellow-button {
+        margin: 0 auto;
+    }
+
+    .something-for-everyone>div.col-xs-12:after {
+        height: 105px;
+        bottom: -20px;
+    }
+}
+
+.container-fluid:before,
+.container-fluid:after {
+    content: "";
+    display: table;
+}
+
+.container-fluid:after {
+    clear: both;
+}
+
+.container-fluid {
+    zoom: 1;
+    /* For IE 6/7 (trigger hasLayout) */
+}
+
+#headerBanner .ti-sprite {
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 15px;
+}
+
+#alternativeContact select::-ms-expand {
+    display: none
+}
+
+.ti-input select::-ms-expand {
+    display: none
+}
+
+#alternativeContact .select-arrows,
+#headerBanner .select-arrows {
+    top: 0;
+    bottom: 0;
+    right: 15px;
+    margin: auto;
+}
+
+.as-seen-banner .as-seen-images {
+    width: 70%;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    /* float: left; */
+    padding-left: 40px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+@media screen and (max-width: 767px) {
+    .as-seen-banner .as-seen-images {
+        padding-left: 15px;
+    }
+}
+
+.as-seen-banner.not-home .as-seen-images {
+    float: none;
+    display: block;
+    margin: 0 auto;
+}
+
+.as-seen-title {
+    position: relative;
+    top: 0;
+    width: 30%;
+    height: 100px;
+    display: inline-block;
+    /* float: left; */
+    margin: 0;
+}
+
+.as-seen-title span {
+    color: #fff;
+    padding: 10px 15px;
+    line-height: 30px;
+    position: absolute;
+    top: -65px;
+    width: 480px;
+    margin-left: -20px;
+    background: #EC7624;
+    text-align: right;
+}
+
+#headerBanner .as-seen-title span:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50px;
+    display: block;
+    border-left: 25px solid #EC7624;
+    border-bottom: 25px solid #EC7624;
+    border-right: 25px solid transparent;
+    border-top: 25px solid transparent;
+}
+
+#headerBanner .as-seen-banner>div:before {
+    content: '';
+    position: absolute;
+    left: 30%;
+    top: -15px;
+    bottom: -15px;
+    width: 120px;
+    background: -moz-linear-gradient(left, rgba(20, 109, 168, 1) 0%, rgba(20, 109, 168, 0) 100%);
+    background: -webkit-linear-gradient(left, rgba(20, 109, 168, 1) 0%, rgba(20, 109, 168, 0) 100%);
+    background: linear-gradient(to right, rgba(20, 109, 168, 1) 0%, rgba(20, 109, 168, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#146da8', endColorstr='#00ffffff', GradientType=1);
+    z-index: 1;
+}
+
+#headerBanner .as-seen-banner>div:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -15px;
+    bottom: -15px;
+    width: 120px;
+    background: -moz-linear-gradient(left, rgba(20, 109, 168, 0) 0%, rgba(20, 109, 168, 1) 100%);
+    background: -webkit-linear-gradient(left, rgba(20, 109, 168, 0) 0%, rgba(20, 109, 168, 1) 100%);
+    background: linear-gradient(to right, rgba(20, 109, 168, 0) 0%, rgba(20, 109, 168, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#146da8', GradientType=1);
+}
+
+
+@media screen and (max-width: 991px) {
+
+    #headerBanner .as-seen-banner>div:before,
+    #headerBanner .as-seen-banner>div:after {
+        top: 0;
+        bottom: 0;
+    }
+
+    .as-seen-title {
+        top: 15px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .as-seen-banner .as-seen-images {
+        width: 100%;
+    }
+
+    .as-seen-title {
+        width: 0;
+        z-index: 2;
+        height: auto;
+    }
+
+    #headerBanner .as-seen-banner>div:before {
+        left: 0;
+    }
+
+    .as-seen-banner .scroll-arrow.left {
+        left: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .as-seen-title span {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    #splashPage img {
+        left: -40px;
+    }
+}
+
+a[href^="http://maps.google.com/maps"] {
+    display: none !important
+}
+
+a[href^="https://maps.google.com/maps"] {
+    display: none !important
+}
+
+.gmnoprint a,
+.gmnoprint span,
+.gm-style-cc {
+    display: none;
+}
+
+.gmnoprint div {
+    background: none !important;
+}
+
+.ti-hide {
+    display: none !important;
+}
+
+.container-fluid .no-top-padding {
+    padding-top: 0;
+}
+
+
+
+.slick-slide {
+    padding-bottom: 10px;
+}
+
+.slick-slide>div {
+    padding: 0 0 0 30px;
+}
+
+@media screen and (max-width: 519px) {
+    .slick-slide>div {
+        padding: 0 0 0 10px;
+    }
+}
+
+.slick-slide .ti-box {
+    margin: 0;
+    max-width: none;
+}
+
+#recentlyViewed .slick-slide .ti-box,
+#eventPage .slick-slide .ti-box,
+#allEventsSlider .slick-slide .ti-box,
+#gamesTheyLove .slick-slide .ti-box {
+    max-width: none !important;
+    margin: 0;
+}
+
+.ti-box .circle-img {
+    text-align: center;
+}
+
+.ti-box .circle-img img {
+    position: relative;
+}
+
+.ti-slider-gallery .slick-slide>div {
+    padding: 0;
+}
+
+#text-white {
+    color: white !important;
+}
+
+.desktop-menu-div {
+    display: block;
+}
+
+.desktop-view-activity-name {
+    display: block;
+}
+
+.as-seen-img {
+    display: inline-flex;
+    vertical-align: middle;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: center;
+    min-height: 90px;
+}
+
+.load-more-btn {
+    margin-top: 27px !important;
+}
+
+.no-suggestion-found {
+    text-align: center;
+    color: #fff;
+}
+
+.single-line {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.multiline-ellipsis {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    /* start showing ellipsis when 3rd line is reached */
+    white-space: pre-wrap;
+    /* let the text wrap preserving spaces */
+}
+
+.games-sub-title {
+    height: 85px;
+}
+
+.fit-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.game-outer {
+    height: 485px;
+}
+
+.owl-theme .owl-nav {
+    margin-top: 0;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    height: 0px !important;
+}
+
+#navLinks .links-container div.sub-menu a.active_menu {
+    color: #EC7624;
+    background: none;
+}
+
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .mobile-menu-div {
+        display: none;
+    }
+
+    .desktop-menu-div {
+        display: none;
+    }
+
+    /* .games-sub-title {
+        height: unset;
+    } */
+
+    .game-outer {
+        height: unset;
+    }
+
+    .games-sub-title {
+        height: 76px;
+    }
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+    .mobile-menu-div {
+        display: none;
+    }
+
+    .desktop-menu-div {
+        display: none;
+    }
+
+    /* .games-sub-title {
+        height: unset;
+    } */
+
+    .game-outer {
+        height: unset;
+    }
+
+    .games-sub-title {
+        height: 76px;
+    }
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .mobile-menu-div {
+        display: none;
+    }
+
+    .desktop-menu-div {
+        display: none;
+    }
+
+    /* .games-sub-title {
+        height: unset;
+    } */
+
+    .game-outer {
+        height: unset;
+    }
+
+    .games-sub-title {
+        height: 76px;
+    }
+}

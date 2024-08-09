@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Disallow: /404
+
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://g2u.vercel.app/
+
+# Sitemaps
+Sitemap: https://g2u.vercel.app/sitemap.xml
