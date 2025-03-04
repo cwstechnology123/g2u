@@ -19,6 +19,10 @@
     top: 30vh;
 }
 
+.ti-orange-text.location-edit-link {
+    display: flex;
+}
+
 /* Media Query for Tablets Ipads portrait mode */
 @media (min-width: 768px) and (max-width: 1024px) {
     .react-responsive-modal-modal {
