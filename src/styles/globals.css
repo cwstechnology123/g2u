@@ -23,6 +23,22 @@
     display: flex;
 }
 
+.mt-15 {
+    margin-top: 15px !important;
+}
+.mt-10 {
+    margin-top: 10px !important;
+}
+.mt-5 {
+    margin-top: 5px !important;
+}
+.mt-0 {
+    margin-top: 0px !important;
+}
+.lh-inherit {
+    line-height: inherit;
+}
+
 /* Media Query for Tablets Ipads portrait mode */
 @media (min-width: 768px) and (max-width: 1024px) {
     .react-responsive-modal-modal {

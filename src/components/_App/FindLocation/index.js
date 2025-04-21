@@ -82,18 +82,10 @@ const FindLocation = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="location-information">
+                    {/* <div className="location-information">
                         <h3>Locally Owned &amp; Operated</h3>
-                        {/* <p className="ti-orange-text">  {games && games?.affiliate.total_events ? Intl.NumberFormat('en-US').format(games.affiliate.total_events) : 1}+ events since {games.affiliate.start_year != '' ? games.affiliate.start_year : currentYear}</p> */}
                         <p className="ti-orange-text">8,000+ events since 2008</p>
                         <div>
-                            {/* <a href="#testimonialContent">
-                                <span className={`ti-sprite ${games.affiliate.star_rating >= 1 ? 'large-yellow-star' : null} `} />
-                                <span className={`ti-sprite ${games.affiliate.star_rating >= 2 ? 'large-yellow-star' : null} `} />
-                                <span className={`ti-sprite ${games.affiliate.star_rating >= 3 ? 'large-yellow-star' : null} `} />
-                                <span className={`ti-sprite ${games.affiliate.star_rating >= 4 ? 'large-yellow-star' : null} `} />
-                                <span className={`ti-sprite ${games.affiliate.star_rating >= 5 ? 'large-yellow-star' : null} `} />
-                            </a> */}
                             <a href="#testimonialContent">
                                 <span className={`ti-sprite large-yellow-star `} />
                                 <span className={`ti-sprite large-yellow-star `} />
@@ -105,6 +97,12 @@ const FindLocation = () => {
                         <div>
                             <a href="#footerContact" className="ti-yellow-button">Request Info</a>
                         </div>
+                    </div> */}
+                    <div className="location-information">
+                        <h3>This Space Can Be Yours!</h3>
+                        <h5 className="mt-10 lh-inherit">We're the largest marketer of mobile event businesses in the world. Game trucks. Bounce houses. Laser Tag. Casino parties. If it's mobile entertainment, we have the customers.</h5>
+                        <h5 className="mt-10 lh-inherit">Need more leads for your business? Call us today at</h5>
+                        <p className="ti-orange-text mt-10 lh-inherit">1-800-71-GAMES!</p>
                     </div>
                 </div>
 
