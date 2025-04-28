@@ -80,6 +80,34 @@ const sitemap = ({ eventListData: { events, pagination }, testimonialsData, site
                                 </ul>
                             </div>
                         </div>
+
+                        <div className="p-6">
+                            <h1 className="text-2xl font-bold mb-4">Site Map - Page {page}</h1>
+                            <ul className="list-disc pl-6">
+                                {data.map((item, idx) => (
+                                <li key={idx}>
+                                    <a href={`/${item.state}/activities/${item.activity}`} className="text-blue-600 underline">
+                                    {item.territory} / {item.state} / {item.activity}
+                                    </a>
+                                </li>
+                                ))}
+                            </ul>
+
+                            <div className="mt-6 flex gap-4">
+                                {page > 1 && (
+                                <Link href={`/site-map/${page - 1}`} legacyBehavior>
+                                    <a className="text-blue-500">⬅ Prev</a>
+                                </Link>
+                                )}
+                                {page < totalPages && (
+                                <Link href={`/site-map/${page + 1}`} legacyBehavior>
+                                    <a className="text-blue-500">Next ➡</a>
+                                </Link>
+                                )}
+                            </div>
+                            </div>
+
+
                     </div>
                 </div >
             </div >
