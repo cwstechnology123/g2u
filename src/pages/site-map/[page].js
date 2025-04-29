@@ -124,8 +124,8 @@ const sitemap = ({ sitemapData, totalPages, currentPage, siteSettingData, testim
                                     <div className="accordion">
                                         {Object.entries(territory.zipcodes).map(([zipcode, data], zIndex) => {
                                         const key = `${territory.id}-${zipcode}`;
-                                        const isOpen = openSections[key];
-
+                                        //const isOpen = openSections[key];
+                                        const isOpen = true;
                                         return (
                                             <div key={key} className="accordion-item border mb-2">
                                             <h2 className="accordion-header">
