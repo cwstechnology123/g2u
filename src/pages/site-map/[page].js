@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Header from '@/components/_App/Header'
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
@@ -31,6 +31,41 @@ const sitemap = ({ sitemapData, totalPages, currentPage, siteSettingData, testim
             cardType: 'summary_large_image'
         },
     }
+
+    const [openSections, setOpenSections] = useState({});
+
+    const toggleSection = (key) => {
+        setOpenSections((prev) => ({
+        ...prev,
+        [key]: !prev[key]
+        }));
+    };
+
+    const structuredData = Object.values(
+        sitemapData.reduce((acc, item) => {
+          const territoryKey = item.territory_id;
+    
+          if (!acc[territoryKey]) {
+            acc[territoryKey] = {
+              id: item.territory_id,
+              territory_name: item.territory_name,
+              state_name: item.state_name,
+              zipcodes: {}
+            };
+          }
+    
+          if (!acc[territoryKey].zipcodes[item.zipcode]) {
+            acc[territoryKey].zipcodes[item.zipcode] = {
+              z_slug: item.z_slug,
+              activities: []
+            };
+          }
+    
+          acc[territoryKey].zipcodes[item.zipcode].activities.push(item);
+          return acc;
+        }, {})
+    );
+
     return (
         <>
             <NextSeo {...SEO} />
@@ -82,53 +117,53 @@ const sitemap = ({ sitemapData, totalPages, currentPage, siteSettingData, testim
                                 <h2 className="h4 mb-4">Dynamic Site Map Links (Page {currentPage})</h2>
 
                                 <div className="list-group mb-4">
-                                {Object.values(
-                                    sitemapData.reduce((acc, item) => {
-                                        const territoryKey = item.territory_id;
+                                {structuredData.map((territory, tIndex) => (
+                                    <div key={`territory-${territory.id}`} className="mb-4">
+                                    <h4>{`${territory.state_name} (${territory.territory_name})`}</h4>
 
-                                        if (!acc[territoryKey]) {
-                                            acc[territoryKey] = {
-                                                territory_name: item.territory_name,
-                                                state_name: item.state_name,
-                                                zipcodes: {}
-                                            };
-                                        }
+                                    <div className="accordion">
+                                        {Object.entries(territory.zipcodes).map(([zipcode, data], zIndex) => {
+                                        const key = `${territory.id}-${zipcode}`;
+                                        const isOpen = openSections[key];
 
-                                        if (!acc[territoryKey].zipcodes[item.zipcode]) {
-                                            acc[territoryKey].zipcodes[item.zipcode] = {
-                                                z_slug: item.z_slug,
-                                                activities: []
-                                            };
-                                        }
+                                        return (
+                                            <div key={key} className="accordion-item border mb-2">
+                                            <h2 className="accordion-header">
+                                                <button
+                                                onClick={() => toggleSection(key)}
+                                                className={`accordion-button ${isOpen ? "active" : ""}`}
+                                                style={{ width: "100%", textAlign: "left" }}
+                                                >
+                                                Zipcode: {zipcode}
+                                                </button>
+                                            </h2>
 
-                                        acc[territoryKey].zipcodes[item.zipcode].activities.push(item);
-
-                                        return acc;
-                                    }, {})
-                                ).map((territory) => (
-                                    <div key={territory.territory_name}>
-                                        <h4>{`${territory.state_name} (${territory.territory_name})`}</h4>
-                                        <div className="ms-3">
-                                            {Object.entries(territory.zipcodes).map(([zipcode, data]) => (
-                                                <div key={zipcode}>
-                                                    <h5>{zipcode}</h5>
-                                                    <ul className="list-unstyled">
-                                                        {data.activities.map((activity) => (
-                                                            <li key={`${zipcode}-${activity.activity_id}`}>
-                                                                <Link
-                                                                    href={`${process.env.NEXT_PUBLIC_DOMAIN_URL}${activity.activity_slug}`}
-                                                                    className="list-group-item list-group-item-action"
-                                                                >
-                                                                    {process.env.NEXT_PUBLIC_DOMAIN_URL}{activity.activity_slug}
-                                                                </Link>
-                                                            </li>
-                                                        ))}
-                                                    </ul>
+                                            {isOpen && (
+                                                <div className="accordion-body p-3 border-top">
+                                                <ul className="list-group">
+                                                    {data.activities.map((activity) => (
+                                                    <li
+                                                        className="list-group-item"
+                                                        key={`${zipcode}-${activity.activity_slug}`}
+                                                    >
+                                                        <Link
+                                                        href={`${process.env.NEXT_PUBLIC_DOMAIN_URL}${activity.activity_slug}`}
+                                                        className="text-decoration-none"
+                                                        >
+                                                        {process.env.NEXT_PUBLIC_DOMAIN_URL}{activity.activity_slug}
+                                                        </Link>
+                                                    </li>
+                                                    ))}
+                                                </ul>
                                                 </div>
-                                            ))}
-                                        </div>
+                                            )}
+                                            </div>
+                                        );
+                                        })}
+                                    </div>
                                     </div>
                                 ))}
+
                                 </div>
 
                                 {/* Pagination */}
@@ -180,7 +215,7 @@ export async function getServerSideProps(context) {
 
     const page = parseInt(context.params?.page || '1', 10);
     console.log('page', page);
-    const response = await fetchApi({url: `${apiBaseUrl}/site-map/${page}/200`, method: "GET"});
+    const response = await fetchApi({url: `${apiBaseUrl}/site-map/${page}/506`, method: "GET"});
     
     const sitemapData = response.data.data;
     const totalPages = response.data.totalPages;

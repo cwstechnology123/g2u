@@ -39,6 +39,32 @@
     line-height: inherit;
 }
 
+.accordion-button {
+    background: #f8f9fa;
+    border: none;
+    font-weight: bold;
+    padding: 12px 16px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .accordion-button::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 18px;
+    transition: transform 0.2s ease;
+  }
+  
+  .accordion-button.active::after {
+    content: '–'; /* Dash when open */
+  }
+  
+
 /* Media Query for Tablets Ipads portrait mode */
 @media (min-width: 768px) and (max-width: 1024px) {
     .react-responsive-modal-modal {
