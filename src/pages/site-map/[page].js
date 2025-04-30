@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Header from '@/components/_App/Header'
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
@@ -33,6 +33,15 @@ const sitemap = ({ sitemapData, totalPages, currentPage, siteSettingData, testim
     }
 
     const [openSections, setOpenSections] = useState({});
+
+    useEffect(() => {
+        const initialOpen = {};
+        sitemapData.forEach(item => {
+            const key = `${item.territory_id}-${item.zipcode}`;
+            initialOpen[key] = true;
+        });
+        setOpenSections(initialOpen);
+    }, [sitemapData]);
 
     const toggleSection = (key) => {
         setOpenSections((prev) => ({
@@ -74,7 +83,6 @@ const sitemap = ({ sitemapData, totalPages, currentPage, siteSettingData, testim
                 {/* <!-- header section start with mobile naviagtion  --> */}
                 <Header siteSettings={siteSettingData} />
                 {/* <!-- header section end with mobile naviagtion  --> */}
-
                 <div className="row no-padding not-home all-events-page" id="headerBanner">
                     <div className="ti-page-header row clearfix">
                         <div className="row ti-row">
@@ -84,8 +92,6 @@ const sitemap = ({ sitemapData, totalPages, currentPage, siteSettingData, testim
                         </div>
                     </div>
                 </div>
-
-
             </div >
             {/* <!-- top header and banner with mobile menu section start --> */}
 
@@ -124,8 +130,8 @@ const sitemap = ({ sitemapData, totalPages, currentPage, siteSettingData, testim
                                     <div className="accordion">
                                         {Object.entries(territory.zipcodes).map(([zipcode, data], zIndex) => {
                                         const key = `${territory.id}-${zipcode}`;
-                                        //const isOpen = openSections[key];
-                                        const isOpen = true;
+                                        const isOpen = openSections[key];
+                                        //const isOpen = true;
                                         return (
                                             <div key={key} className="accordion-item border mb-2">
                                             <h2 className="accordion-header">
@@ -191,9 +197,7 @@ const sitemap = ({ sitemapData, totalPages, currentPage, siteSettingData, testim
                 </div>
             </div>
 
-
             {/* content section end */}
-
             < Footer
                 testimonials={testimonialsData}
                 siteSettings={siteSettingData}
@@ -214,30 +218,29 @@ export async function getServerSideProps(context) {
     const testimonialsData = testimonialsContent.data.testimonials;
 
     const page = parseInt(context.params?.page || '1', 10);
-    console.log('page', page);
     const response = await fetchApi({url: `${apiBaseUrl}/site-map/${page}/506`, method: "GET"});
     
     const sitemapData = response.data.data;
     const totalPages = response.data.totalPages;
-    //console.log('totalPages', sitemapData);
+
     return {
         props: {
             sitemapData: sitemapData??[],
             totalPages: totalPages ?? 0,
             currentPage: parseInt(page),
-            siteSettingData: siteSettingData ?? {},
+            siteSettingData: siteSettingData ?? [],
             testimonialsData: testimonialsData ?? [],
         },
     };
     
     } catch (error) {
-        console.error(error);
+        //console.error(error);
         return {
             props: {
                 sitemapData: [],
                 totalPages: 0,
                 currentPage: 1,
-                siteSettingData: {},
+                siteSettingData: [],
                 testimonialsData: [],
             },
         };
