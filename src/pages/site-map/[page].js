@@ -32,16 +32,14 @@ const sitemap = ({ sitemapData, totalPages, currentPage, siteSettingData, testim
         },
     }
 
-    const [openSections, setOpenSections] = useState({});
+    // Initialize openSections before first render
+    const initialOpenSections = {};
+    sitemapData.forEach(item => {
+        const key = `${item.territory_id}-${item.zipcode}`;
+        initialOpenSections[key] = true;
+    });
 
-    useEffect(() => {
-        const initialOpen = {};
-        sitemapData.forEach(item => {
-            const key = `${item.territory_id}-${item.zipcode}`;
-            initialOpen[key] = true;
-        });
-        setOpenSections(initialOpen);
-    }, [sitemapData]);
+    const [openSections, setOpenSections] = useState(initialOpenSections);
 
     const toggleSection = (key) => {
         setOpenSections((prev) => ({
@@ -130,8 +128,8 @@ const sitemap = ({ sitemapData, totalPages, currentPage, siteSettingData, testim
                                     <div className="accordion">
                                         {Object.entries(territory.zipcodes).map(([zipcode, data], zIndex) => {
                                         const key = `${territory.id}-${zipcode}`;
-                                        //const isOpen = openSections[key];
-                                        const isOpen = true;
+                                        const isOpen = openSections[key];
+                                        //const isOpen = true;
                                         return (
                                             <div key={key} className="accordion-item border mb-2">
                                             <h2 className="accordion-header">
