@@ -8,4 +8,5 @@ const LoadMoreButton = ({ getMoreData, isLoading, loadingBtnText }) => {
         </div>
     )
 }
+
 export default LoadMoreButton
