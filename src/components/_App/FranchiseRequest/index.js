@@ -30,7 +30,7 @@ const FranchiseRequest = ({ investors }) => {
     //submit handler
     // console.log("errors", errors)
     const onSubmit = async formValue => {
-        formValue.affiliate_id = games.affiliate.id
+        formValue.affiliate_id = games.affiliate.affiliate_id
         setIsLoader(true)
         setSubmitBtnText("Submiting...")
         delete formValue.acceptTerms // delete acceptTerms key
