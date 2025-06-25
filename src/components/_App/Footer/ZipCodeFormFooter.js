@@ -28,7 +28,7 @@ const ZipCodeFormFooter = ({ phoneNumberLabel }) => {
     const { register, setValue, formState: { errors, isSubmitting }, handleSubmit, reset } = useForm(bookAnEventFormOptions);
     //submit handler
     const onSubmit = async formValue => {
-        formValue.affiliate_id = games.affiliate.id
+        formValue.affiliate_id = games.affiliate.affiliate_id
         formValue.zipcode = games.affiliate.zipcode
         setIsLoader(true)
         setSubmitBtnText("Submiting...")
